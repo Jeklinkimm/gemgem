@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>잼잼 GemGem — 도입 문의 & 데모 신청</title>
+<meta property="og:title" content="잼잼 GemGem — 도입 문의 & 데모 신청">
+<meta property="og:description" content="아이들이 먼저 찾는 소근육·대근육 발달 수업. 센터 방문 데모 15분이면 충분해요.">
+<style>
+:root{
+  --bg:#FDF9F0; --ink:#241F17; --sub:#6B6254; --line:#E8E0D0;
+  --green:#1C7C54; --green-dk:#15603F; --amber:#F5A623; --red:#D64524;
+  --card:#FFFFFF; --radius:16px;
+}
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg); color:var(--ink);
+  font-family:'Pretendard Variable',Pretendard,-apple-system,'Apple SD Gothic Neo','Noto Sans KR',sans-serif;
+  font-size:16px; line-height:1.6; min-height:100dvh;
+}
+.wrap{max-width:520px;margin:0 auto;padding:0 20px 60px}
+
+/* hero */
+.hero{padding:44px 0 8px;text-align:left}
+.logo{font-weight:800;font-size:15px;letter-spacing:.04em;color:var(--green);margin-bottom:18px}
+h1{font-size:25px;font-weight:800;line-height:1.42;letter-spacing:-.02em}
+h1 .hl{color:var(--green)}
+.sub{margin-top:12px;color:var(--sub);font-size:15px;line-height:1.7}
+.badges{display:flex;flex-wrap:wrap;gap:7px;margin-top:16px}
+.badge{font-size:12.5px;font-weight:600;background:#EFF7F0;color:var(--green-dk);border:1px solid #D8EBDD;padding:5px 11px;border-radius:20px}
+
+/* form card */
+.form-card{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  margin-top:26px;padding:26px 22px;box-shadow:0 6px 24px rgba(36,31,23,.06);
+}
+.progress{height:6px;background:#F0EADD;border-radius:3px;overflow:hidden;margin-bottom:22px}
+.progress .bar{height:100%;background:var(--green);width:0%;transition:width .3s ease}
+.step-label{font-size:12px;font-weight:700;color:var(--green);letter-spacing:.08em;margin-bottom:8px}
+.q{font-size:19px;font-weight:700;line-height:1.5;margin-bottom:18px;word-break:keep-all}
+.q small{display:block;font-size:13px;font-weight:400;color:var(--sub);margin-top:4px}
+
+input[type=text],input[type=tel],textarea{
+  width:100%;font-size:17px;padding:14px 16px;border:1.5px solid var(--line);
+  border-radius:12px;background:#FCFAF5;color:var(--ink);outline:none;font-family:inherit;
+}
+input:focus,textarea:focus{border-color:var(--green);background:#fff}
+textarea{min-height:110px;resize:vertical}
+
+.choices{display:flex;flex-direction:column;gap:10px}
+.choice{
+  display:block;width:100%;text-align:left;font-size:16px;font-weight:600;font-family:inherit;
+  padding:15px 18px;border:1.5px solid var(--line);border-radius:12px;background:#FCFAF5;
+  color:var(--ink);cursor:pointer;transition:border-color .12s, background .12s;
+}
+.choice:active{transform:scale(.99)}
+.choice.sel{border-color:var(--green);background:#EFF7F0;color:var(--green-dk)}
+
+.nav{display:flex;gap:10px;margin-top:22px}
+button.primary{
+  flex:1;font-size:17px;font-weight:700;font-family:inherit;color:#fff;background:var(--green);
+  border:none;border-radius:12px;padding:15px 18px;cursor:pointer;
+}
+button.primary:disabled{opacity:.4;cursor:default}
+button.back{
+  font-size:15px;font-weight:600;font-family:inherit;color:var(--sub);background:transparent;
+  border:1.5px solid var(--line);border-radius:12px;padding:15px 16px;cursor:pointer;
+}
+.err{color:var(--red);font-size:13.5px;margin-top:8px;display:none}
+
+/* done screen */
+.done{text-align:center;padding:30px 6px}
+.done .big{font-size:44px;margin-bottom:14px}
+.done h2{font-size:21px;font-weight:800;margin-bottom:10px}
+.done p{color:var(--sub);font-size:15px;line-height:1.75}
+
+.foot{margin-top:34px;text-align:center;color:#B4AA97;font-size:12px;line-height:1.8}
+.foot a{color:inherit}
+@media (min-width:600px){ .hero{padding-top:64px} h1{font-size:28px} }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="hero">
+    <div class="logo">잼잼 GemGem</div>
+    <h1>아이들이 먼저 찾는<br><span class="hl">소근육·대근육 발달 수업</span></h1>
+    <p class="sub">카메라 게임 하나로 완성되는 40분 수업.<br>아이는 놀고, 성장 리포트가 부모님께 전달됩니다.</p>
+    <div class="badges">
+      <span class="badge">대구 모든 특수학교 수업 중</span>
+      <span class="badge">인천 최대 방과후 센터 도입</span>
+      <span class="badge">발달 바우처 시작 가능</span>
+    </div>
+  </header>
+
+  <div class="form-card" id="card">
+    <div class="progress"><div class="bar" id="bar"></div></div>
+    <div id="stage"></div>
+  </div>
+
+  <p class="foot">잼잼테라퓨틱스 · hello@gemgem.me<br>남겨주신 정보는 도입 상담 목적으로만 사용됩니다.</p>
+</div>
+
+<script>
+/* ================= CONFIG ================= */
+const CONFIG = {
+  MIXPANEL_TOKEN: "",        // ← Mixpanel 프로젝트 토큰 붙여넣기
+  SHEETS_WEBHOOK: ""         // ← Google Apps Script 웹앱 URL 붙여넣기 (README 참조)
+};
+/* ========================================== */
+
+/* --- Mixpanel loader (token 없으면 콘솔 스텁) --- */
+(function(f,b){if(!b.__SV){var e,g,i,h;window.mixpanel=b;b._i=[];b.init=function(e,f,c){function g(a,d){var b=d.split(".");2==b.length&&(a=a[b[0]],d=b[1]);a[d]=function(){a.push([d].concat(Array.prototype.slice.call(arguments,0)))}}var a=b;"undefined"!==typeof c?a=b[c]=[]:c="mixpanel";a.people=a.people||[];a.toString=function(a){var d="mixpanel";"mixpanel"!==c&&(d+="."+c);a||(d+=" (stub)");return d};a.people.toString=function(){return a.toString(1)+".people (stub)"};i="disable time_event track track_pageview track_links track_forms track_with_groups add_group set_group remove_group register register_once alias unregister identify name_tag set_config reset opt_in_tracking opt_out_tracking has_opted_in_tracking has_opted_out_tracking clear_opt_in_out_tracking start_batch_senders people.set people.set_once people.unset people.increment people.append people.union people.track_charge people.clear_charges people.delete_user people.remove".split(" ");for(h=0;h<i.length;h++)g(a,i[h]);var j="init push disable toString".split(" ");for(h=0;h<j.length;h++)g(b,j[h]);b._i.push([e,f,c])};b.__SV=1.2;e=f.createElement("script");e.type="text/javascript";e.async=!0;e.src="https://cdn.mxpnl.com/libs/mixpanel-2-latest.min.js";g=f.getElementsByTagName("script")[0];g.parentNode.insertBefore(e,g)}})(document,window.mixpanel||[]);
+
+const utm = new URLSearchParams(location.search);
+const CH = {
+  utm_source: utm.get("utm_source") || "direct",
+  utm_content: utm.get("utm_content") || "none",
+  referrer: document.referrer || ""
+};
+let MP_ON = false;
+if (CONFIG.MIXPANEL_TOKEN) {
+  mixpanel.init(CONFIG.MIXPANEL_TOKEN, {persistence:"localStorage"});
+  mixpanel.register(CH);
+  MP_ON = true;
+}
+function track(ev, props={}) {
+  const payload = {...CH, ...props};
+  if (MP_ON) { try { mixpanel.track(ev, payload); } catch(e){} }
+  else { console.log("[track]", ev, payload); }
+  try { // 로컬 백업 (미제출 복구용 아님 — 디버그)
+    const log = JSON.parse(localStorage.getItem("gg_events")||"[]");
+    log.push({ev, ...payload, t: Date.now()});
+    localStorage.setItem("gg_events", JSON.stringify(log.slice(-200)));
+  } catch(e){}
+}
+
+/* --- 문항 정의 --- */
+const STEPS = [
+  {id:"name",    label:"기본 정보", q:"성함을 알려주세요", type:"text",  ph:"홍길동", required:true},
+  {id:"phone",   label:"기본 정보", q:"연락처 (휴대폰)", type:"tel",   ph:"010-0000-0000", required:true,
+    valid: v => /^01[016789][-\s]?\d{3,4}[-\s]?\d{4}$/.test(v.trim()) || "휴대폰 번호 형식을 확인해주세요"},
+  {id:"channel", label:"기본 정보", q:"어떻게 알게 되셨나요?", type:"choice", required:true,
+    opts:["오티즘엑스포 부스","인스타그램","지인 소개","기타"]},
+  {id:"role",    label:"기본 정보", q:"어떤 분이세요?", type:"choice", required:true,
+    opts:["센터·기관 운영/근무","보호자"]},
+  // 센터 트랙
+  {id:"org",     track:"center", label:"센터·기관", q:"센터·기관명을 알려주세요", type:"text", ph:"○○아동발달센터", required:true},
+  {id:"region",  track:"center", label:"센터·기관", q:"지역이 어디세요?", type:"text", ph:"예: 성남시 분당구"},
+  {id:"orgtype", track:"center", label:"센터·기관", q:"기관 유형을 골라주세요", type:"choice",
+    opts:["발달센터","방과후·주간활동","지역아동센터","복지관","학교·유치원","기타"]},
+  {id:"kids",    track:"center", label:"센터·기관", q:"함께하는 아이는 몇 명인가요?", type:"choice",
+    opts:["10명 미만","10~30명","30~60명","60명 이상"]},
+  {id:"demo",    track:"center", label:"센터·기관", q:"방문 데모, 언제가 편하세요?", type:"choice",
+    sub:"아이들 5~6명과 실제 수업으로 보여드립니다. 준비물은 저희가 다 가져가요.",
+    opts:["다음주 화요일 오전","화요일 오후","목요일 오전","목요일 오후","일정 조율 필요"]},
+  {id:"ask",     track:"center", label:"센터·기관", q:"궁금한 점이 있으세요?", sub:"선택 사항이에요", type:"textarea", ph:"예: 발달 바우처로 시작하는 방법이 궁금해요"},
+  // 보호자 트랙
+  {id:"age",     track:"parent", label:"보호자", q:"자녀 나이가 어떻게 되나요?", type:"text", ph:"예: 7살"},
+  {id:"center",  track:"parent", label:"보호자", q:"다니는 센터가 있다면 알려주세요", sub:"선택 사항이에요", type:"text", ph:"센터 이름"},
+  {id:"news",    track:"parent", label:"보호자", q:"잼잼 소식을 받아보실래요?", type:"choice", opts:["네, 받을래요","괜찮아요"]},
+];
+
+let answers = {};
+let path = [];        // 실제로 지나온 step index 기록 (뒤로가기용)
+let cur = 0;          // STEPS index
+let started = false;
+const stage = document.getElementById("stage");
+const bar = document.getElementById("bar");
+
+function trackOf(){ return answers.role ? (answers.role.startsWith("센터") ? "center" : "parent") : null; }
+function visibleSteps(){
+  const t = trackOf();
+  return STEPS.filter(s => !s.track || s.track === t || !answers.role);
+}
+function totalForProgress(){
+  const t = trackOf();
+  if (!t) return 4 + 6; // 최악 기준
+  return STEPS.filter(s => !s.track || s.track===t).length;
+}
+function stepNumber(){
+  const t = trackOf();
+  const upto = STEPS.slice(0, cur+1).filter(s => !s.track || s.track===t);
+  return upto.length;
+}
+
+function nextIndex(from){
+  const t = trackOf();
+  for (let i = from+1; i < STEPS.length; i++){
+    const s = STEPS[i];
+    if (!s.track) return i;
+    if (t && s.track === t) return i;
+    if (!t) return i; // role 전엔 공통만 나오므로 도달 안 함
+  }
+  return -1; // 끝
+}
+
+function render(){
+  const s = STEPS[cur];
+  const num = stepNumber(), tot = totalForProgress();
+  bar.style.width = Math.round((num-1)/tot*100) + "%";
+  let inner = `<div class="step-label">${s.label} · ${num}/${tot}</div>
+    <div class="q">${s.q}${s.sub?`<small>${s.sub}</small>`:""}</div>`;
+  if (s.type === "choice"){
+    inner += `<div class="choices">` + s.opts.map(o =>
+      `<button type="button" class="choice ${answers[s.id]===o?'sel':''}" data-v="${o}">${o}</button>`).join("") + `</div>`;
+  } else if (s.type === "textarea"){
+    inner += `<textarea id="inp" placeholder="${s.ph||''}">${answers[s.id]||""}</textarea>`;
+  } else {
+    inner += `<input id="inp" type="${s.type}" placeholder="${s.ph||''}" value="${answers[s.id]||""}" ${s.type==='tel'?'inputmode="tel"':''}>`;
+  }
+  inner += `<div class="err" id="err"></div><div class="nav">`;
+  if (path.length) inner += `<button type="button" class="back" id="btn-back">이전</button>`;
+  const isLast = nextIndex(cur) === -1;
+  inner += `<button type="button" class="primary" id="btn-next">${isLast ? "제출하기" : "다음"}</button></div>`;
+  stage.innerHTML = inner;
+
+  stage.querySelectorAll(".choice").forEach(c => c.addEventListener("click", () => {
+    stage.querySelectorAll(".choice").forEach(x=>x.classList.remove("sel"));
+    c.classList.add("sel");
+    answers[s.id] = c.dataset.v;
+    setTimeout(advance, 200); // 선택형은 자동 진행
+  }));
+  const inp = document.getElementById("inp");
+  if (inp) { inp.focus(); inp.addEventListener("keydown", e => { if(e.key==="Enter" && s.type!=="textarea"){ e.preventDefault(); advance(); } }); }
+  document.getElementById("btn-next").addEventListener("click", advance);
+  const bb = document.getElementById("btn-back");
+  if (bb) bb.addEventListener("click", goBack);
+
+  if (!started){ started = true; track("lead_start"); }
+}
+
+function advance(){
+  const s = STEPS[cur];
+  const inp = document.getElementById("inp");
+  if (inp) answers[s.id] = inp.value.trim();
+  const v = answers[s.id] || "";
+  const err = document.getElementById("err");
+  if (s.required && !v){ err.textContent = "이 항목은 필수예요"; err.style.display="block"; return; }
+  if (s.valid && v){ const r = s.valid(v); if (r !== true){ err.textContent = r; err.style.display="block"; return; } }
+  track("lead_step", { step_id: s.id, step_name: s.q, step_number: stepNumber(), track: trackOf() || "pre" });
+  const nx = nextIndex(cur);
+  if (nx === -1){ submit(); return; }
+  path.push(cur); cur = nx; render();
+}
+function goBack(){ if (!path.length) return; cur = path.pop(); render(); }
+
+async function submit(){
+  bar.style.width = "100%";
+  const payload = { ...answers, track: trackOf(), ...CH, submitted_at: new Date().toISOString(), ua: navigator.userAgent };
+  track("lead_submit", payload);
+  try { localStorage.setItem("gg_last_submit", JSON.stringify(payload)); } catch(e){}
+  if (CONFIG.SHEETS_WEBHOOK){
+    try { await fetch(CONFIG.SHEETS_WEBHOOK, { method:"POST", mode:"no-cors", headers:{"Content-Type":"text/plain"}, body: JSON.stringify(payload) }); }
+    catch(e){ track("lead_webhook_error", {msg: String(e)}); }
+  }
+  stage.innerHTML = `<div class="done">
+    <div class="big">🙌</div>
+    <h2>감사합니다!</h2>
+    <p>48시간 안에 연락드릴게요.<br>센터 데모는 방문해서 아이들과<br><b>실제 수업</b>으로 보여드립니다.</p>
+  </div>`;
+}
+
+track("lead_view");
+render();
+</script>
+</body>
+</html>
