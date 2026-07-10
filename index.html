@@ -75,6 +75,27 @@ button.back{
 .done h2{font-size:21px;font-weight:800;margin-bottom:10px}
 .done p{color:var(--sub);font-size:15px;line-height:1.75}
 
+/* intro / brochure */
+.intro{margin-top:26px}
+.scene{width:100%;border-radius:var(--radius);display:block;box-shadow:0 6px 24px rgba(36,31,23,.08)}
+.sec-t{font-size:19px;font-weight:800;margin:30px 0 4px;letter-spacing:-.01em}
+.sec-t .bar{display:inline-block;width:22px;height:4px;border-radius:2px;background:var(--green);margin-right:9px;vertical-align:4px}
+.sec-p{color:var(--sub);font-size:14.5px;margin-bottom:14px}
+.rcard{display:flex;gap:12px;align-items:flex-start;background:var(--card);border:1px solid var(--line);
+  border-radius:14px;padding:15px 16px;margin-bottom:10px}
+.rcard .n{flex:none;width:26px;height:26px;border-radius:9px;background:var(--green);color:#fff;
+  font-size:14px;font-weight:800;display:flex;align-items:center;justify-content:center;margin-top:2px}
+.rcard .tt{font-size:15.5px;font-weight:700}
+.rcard .bd{font-size:13.5px;color:var(--sub);margin-top:2px}
+.shots{display:flex;gap:10px;overflow-x:auto;padding:4px 2px 8px;-webkit-overflow-scrolling:touch}
+.shots img{height:120px;border-radius:10px;border:3px solid #fff;box-shadow:0 3px 10px rgba(36,31,23,.12);flex:none}
+.stats{display:flex;flex-wrap:wrap;gap:7px;margin:14px 0 6px}
+.stat{font-size:13px;font-weight:700;background:#fff;border:1px solid var(--line);color:var(--ink);padding:6px 12px;border-radius:20px}
+.stat b{color:var(--green)}
+.clinic{font-size:12.5px;color:var(--sub);margin-top:4px}
+.cta-btn{display:block;width:100%;text-align:center;font-size:17px;font-weight:800;color:#fff;background:var(--green);
+  border:none;border-radius:14px;padding:17px;margin-top:22px;text-decoration:none;box-shadow:0 6px 18px rgba(28,124,84,.25)}
+.form-title{font-size:18px;font-weight:800;margin:36px 0 10px}
 .foot{margin-top:34px;text-align:center;color:#B4AA97;font-size:12px;line-height:1.8}
 .foot a{color:inherit}
 @media (min-width:600px){ .hero{padding-top:64px} h1{font-size:28px} }
@@ -92,6 +113,41 @@ button.back{
     </div>
   </header>
 
+  <section class="intro">
+    <img class="scene" src="img/hero-scene.jpg" alt="잼잼 수업 장면 — 아이들이 게임 화면 앞에서 함께 놀아요">
+
+    <div class="sec-t"><span class="bar"></span>잼잼400은요</div>
+    <p class="sec-p">카메라가 아이의 손동작·몸동작을 인식하는 <b>대소근육 운동 게임</b>이에요.
+    장비 없이 태블릿 하나로, 아이가 스스로 플레이하는 발달 수업이 됩니다.</p>
+
+    <div class="rcard"><div class="n">1</div><div>
+      <div class="tt">아이가 먼저 “또 하고 싶다”고 해요</div>
+      <div class="bd">인천 최대 규모 발달센터에서 2년째 반마다 운영 중</div></div></div>
+    <div class="rcard"><div class="n">2</div><div>
+      <div class="tt">장비 없이, 태블릿 하나로</div>
+      <div class="bd">세팅이 쉬워요. 게임이 시범·반복·피드백을 대신합니다</div></div></div>
+    <div class="rcard"><div class="n">3</div><div>
+      <div class="tt">발달이 기록으로 남아요</div>
+      <div class="bd">아이별 데이터 자동 기록 · 보호자 전송 · 발달 바우처 가능</div></div></div>
+
+    <div class="sec-t"><span class="bar"></span>이런 게임으로 수업해요</div>
+    <div class="shots">
+      <img src="img/screen-menu.jpg" alt="게임 선택 화면">
+      <img src="img/screen-beanstalk.jpg" alt="콩나무 모험 게임">
+      <img src="img/screen-colorful.jpg" alt="풍선 터뜨리기 게임 — 아이가 화면에 나와요">
+    </div>
+
+    <div class="stats">
+      <span class="stat">특수학교 <b>9개교</b></span>
+      <span class="stat">복지관 <b>12곳</b></span>
+      <span class="stat">게임 완주율 <b>87~100%</b></span>
+    </div>
+    <p class="clinic">서울아산병원 · 신촌 세브란스병원 · 유타대병원 임상연구 진행 중</p>
+
+    <a class="cta-btn" href="#card">방문 데모 신청하기 — 15분이면 충분해요</a>
+  </section>
+
+  <div class="form-title">데모 신청 · 도입 문의</div>
   <div class="form-card" id="card">
     <div class="progress"><div class="bar" id="bar"></div></div>
     <div id="stage"></div>
@@ -136,28 +192,25 @@ function track(ev, props={}) {
 
 /* --- 문항 정의 --- */
 const STEPS = [
-  {id:"name",    label:"기본 정보", q:"성함을 알려주세요", type:"text",  ph:"홍길동", required:true},
-  {id:"phone",   label:"기본 정보", q:"연락처 (휴대폰)", type:"tel",   ph:"010-0000-0000", required:true,
-    valid: v => /^01[016789][-\s]?\d{3,4}[-\s]?\d{4}$/.test(v.trim()) || "휴대폰 번호 형식을 확인해주세요"},
-  {id:"channel", label:"기본 정보", q:"어떻게 알게 되셨나요?", type:"choice", required:true,
-    opts:["오티즘엑스포 부스","인스타그램","지인 소개","기타"]},
   {id:"role",    label:"기본 정보", q:"어떤 분이세요?", type:"choice", required:true,
     opts:["센터·기관 운영/근무","보호자"]},
+  {id:"channel", label:"기본 정보", q:"어떻게 알게 되셨나요?", type:"choice", required:true,
+    opts:["오티즘엑스포 부스","인스타그램","지인 소개","기타"]},
   // 센터 트랙
   {id:"org",     track:"center", label:"센터·기관", q:"센터·기관명을 알려주세요", type:"text", ph:"○○아동발달센터", required:true},
   {id:"region",  track:"center", label:"센터·기관", q:"지역이 어디세요?", type:"text", ph:"예: 성남시 분당구"},
   {id:"orgtype", track:"center", label:"센터·기관", q:"기관 유형을 골라주세요", type:"choice",
     opts:["발달센터","방과후·주간활동","지역아동센터","복지관","학교·유치원","기타"]},
-  {id:"kids",    track:"center", label:"센터·기관", q:"함께하는 아이는 몇 명인가요?", type:"choice",
-    opts:["10명 미만","10~30명","30~60명","60명 이상"]},
   {id:"demo",    track:"center", label:"센터·기관", q:"방문 데모, 언제가 편하세요?", type:"choice",
     sub:"아이들 5~6명과 실제 수업으로 보여드립니다. 준비물은 저희가 다 가져가요.",
     opts:["다음주 화요일 오전","화요일 오후","목요일 오전","목요일 오후","일정 조율 필요"]},
-  {id:"ask",     track:"center", label:"센터·기관", q:"궁금한 점이 있으세요?", sub:"선택 사항이에요", type:"textarea", ph:"예: 발달 바우처로 시작하는 방법이 궁금해요"},
   // 보호자 트랙
   {id:"age",     track:"parent", label:"보호자", q:"자녀 나이가 어떻게 되나요?", type:"text", ph:"예: 7살"},
-  {id:"center",  track:"parent", label:"보호자", q:"다니는 센터가 있다면 알려주세요", sub:"선택 사항이에요", type:"text", ph:"센터 이름"},
-  {id:"news",    track:"parent", label:"보호자", q:"잼잼 소식을 받아보실래요?", type:"choice", opts:["네, 받을래요","괜찮아요"]},
+  {id:"center",  track:"parent", label:"보호자", q:"다니는 센터·학교가 있다면 알려주세요", sub:"전달드릴 소개 자료를 보내드려요", type:"text", ph:"센터·학교 이름"},
+  // 연락처는 마지막
+  {id:"name",    label:"연락처", q:"성함을 알려주세요", type:"text",  ph:"홍길동", required:true},
+  {id:"phone",   label:"연락처", q:"연락처 (휴대폰)", type:"tel",   ph:"010-0000-0000", required:true,
+    valid: v => /^01[016789][-\s]?\d{3,4}[-\s]?\d{4}$/.test(v.trim()) || "휴대폰 번호 형식을 확인해주세요"},
 ];
 
 let answers = {};
@@ -174,7 +227,7 @@ function visibleSteps(){
 }
 function totalForProgress(){
   const t = trackOf();
-  if (!t) return 4 + 6; // 최악 기준
+  if (!t) return 8; // 최악 기준
   return STEPS.filter(s => !s.track || s.track===t).length;
 }
 function stepNumber(){
@@ -226,7 +279,7 @@ function render(){
   const bb = document.getElementById("btn-back");
   if (bb) bb.addEventListener("click", goBack);
 
-  if (!started){ started = true; track("lead_start"); }
+
 }
 
 function advance(){
@@ -237,6 +290,7 @@ function advance(){
   const err = document.getElementById("err");
   if (s.required && !v){ err.textContent = "이 항목은 필수예요"; err.style.display="block"; return; }
   if (s.valid && v){ const r = s.valid(v); if (r !== true){ err.textContent = r; err.style.display="block"; return; } }
+  if (!started){ started = true; track("lead_start"); }
   track("lead_step", { step_id: s.id, step_name: s.q, step_number: stepNumber(), track: trackOf() || "pre" });
   const nx = nextIndex(cur);
   if (nx === -1){ submit(); return; }
