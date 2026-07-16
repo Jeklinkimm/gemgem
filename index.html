@@ -206,8 +206,8 @@ const STEPS = [
   {id:"center",  track:"parent", label:"보호자", q:"다니는 센터·학교가 있다면 알려주세요", sub:"전달드릴 소개 자료를 보내드려요", type:"text", ph:"센터·학교 이름"},
   // 연락처는 마지막
   {id:"name",    label:"연락처", q:"성함을 알려주세요", type:"text",  ph:"홍길동", required:true},
-  {id:"phone",   label:"연락처", q:"연락처 (휴대폰)", type:"tel",   ph:"010-0000-0000", required:true,
-    valid: v => /^01[016789][-\s]?\d{3,4}[-\s]?\d{4}$/.test(v.trim()) || "휴대폰 번호 형식을 확인해주세요"},
+  {id:"phone",   label:"연락처", q:"연락처 (휴대폰)", sub:"숫자만 입력하셔도 돼요", type:"tel", ph:"01000000000", required:true,
+    valid: v => (v.replace(/\D/g,"").length >= 7) || "연락 가능한 번호를 남겨주세요"},
 ];
 
 let answers = {};
