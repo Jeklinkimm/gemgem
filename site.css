@@ -60,8 +60,7 @@ input:focus, select:focus { border-color: var(--green); background-color: white;
 .success h3 { font-size: 28px; line-height: 1.2; }
 .success p { font-size: 18px; color: var(--muted); overflow-wrap: anywhere; }
 .product-visual { grid-column: 1; grid-row: 2; margin: 0; }
-.game-frame { padding: 8px; background: #e6ecdf; border: 1px solid #d7e1cf; border-radius: 16px; }
-.game-frame img { display: block; width: 100%; height: auto; border-radius: 9px; }
+.product-visual img { display: block; width: 100%; height: auto; border-radius: 16px; }
 .site-footer { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 14px; padding-block: 22px; border-top: 1px solid var(--line); font-size: 14px; color: var(--muted); }
 .site-footer nav { display: flex; flex-wrap: wrap; gap: 20px; }
 .site-footer a { display: inline-flex; align-items: center; min-height: 44px; }

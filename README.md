@@ -6,8 +6,8 @@ English B2B landing page aligned with the September 2026 AACPDM booth brief: **M
 
 ## Layout
 
-- Desktop: headline and gameplay beside the inquiry form; no long introduction before the form.
-- Mobile: brief headline → form → gameplay. Removed the workflow, company background, duplicate descriptions, and image caption.
+- Desktop: headline and original children-playing image beside the inquiry form; no long introduction before the form.
+- Mobile: brief headline → original children-playing image → form. Removed the workflow, company background, duplicate descriptions, and image caption.
 - Header links directly to `#survey`.
 - Six fields on one page, with no Next/Back navigation or conditional steps: name, email, role, organization, intended setting, 1:1 discussion topic.
 - Existing QR URLs, including `?utm_source=expo&utm_content=parent_card`, continue working and preserve campaign tags. They no longer select different questionnaires.
