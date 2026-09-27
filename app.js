@@ -13,7 +13,6 @@ function track(event) {
     try { window.mixpanel.track(event, channel); } catch (_) {}
   }
 }
-document.querySelectorAll('[data-booking]').forEach(link => link.addEventListener('click', () => track('lead_cta_click')));
 const year = document.getElementById('year');
 if (year) year.textContent = new Date().getFullYear();
 track('lead_view');

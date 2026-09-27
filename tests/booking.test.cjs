@@ -13,23 +13,21 @@ function run(mixpanel) {
   });
   return handlers;
 }
-test('booking scrolls inline and retains an external fallback without analytics', () => {
+test('inline booking retains an external fallback without analytics', () => {
   for (const analytics of [undefined, {init(){throw Error('blocked')}}, {init(){}, track(){throw Error('blocked')}}]) {
-    const handlers = run(analytics);
-    assert.doesNotThrow(() => handlers.click());
+    assert.doesNotThrow(() => run(analytics));
   }
   const html = fs.readFileSync('index.html', 'utf8');
-  assert.match(html, /data-booking href="#survey"/);
+  assert.doesNotMatch(html, /class="booking-button"/);
   assert.match(html, /id="survey" class="calendar-section"/);
   assert.match(html, /class="calendly-inline-widget"/);
   assert.match(html, /href="https:\/\/calendly.com\/jeklinkim-gemgem\/15-minute-aacpdm-intro-call"/);
   assert.doesNotMatch(html, /<form\b/);
 });
-test('records campaign-attributed clicks, never a booking confirmation', () => {
+test('records campaign-attributed page views, never a booking confirmation', () => {
   const events = [];
   const handlers = run({init(){}, track: (name, properties) => events.push({name, properties})});
-  handlers.click();
-  assert.deepEqual(events.map(e => e.name), ['lead_view', 'lead_cta_click']);
-  assert.equal(events[1].properties.utm_source, 'expo');
-  assert.equal(events[1].properties.utm_content, 'parent_card');
+  assert.deepEqual(events.map(e => e.name), ['lead_view']);
+  assert.equal(events[0].properties.utm_source, 'expo');
+  assert.equal(events[0].properties.utm_content, 'parent_card');
 });
