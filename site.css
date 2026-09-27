@@ -62,7 +62,7 @@ h1 .accent { color: var(--accent); }
 
 [hidden] { display: none !important; }
 .inquiry { margin-top: 32px; scroll-margin-top: 16px; }
-.demo-cta { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 56px; margin-top: 20px; padding: 14px 16px; border: 1px solid #9acfe5; border-radius: 9px; background: #eaf6fc; color: #17658a; font-size: 18px; font-weight: 600; text-decoration: none; }
+.demo-cta { display: flex; align-items: center; justify-content: center; width: 100%; font: inherit; cursor: pointer; gap: 12px; min-height: 56px; margin-top: 20px; padding: 14px 16px; border: 1px solid #9acfe5; border-radius: 9px; background: #eaf6fc; color: #17658a; font-size: 18px; font-weight: 600; text-decoration: none; }
 .demo-cta:hover { background: #dceff9; border-color: #65b2d4; }
 .field + .field { margin-top: 16px; }
 .field label { display: block; margin-bottom: 6px; font-size: 16px; font-weight: 600; }

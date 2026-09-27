@@ -6,7 +6,7 @@ const params = new URLSearchParams(location.search);
 const isLocal = ['localhost', '127.0.0.1', '::1'].includes(location.hostname);
 const preview = isLocal && params.get('preview') === '1';
 const channel = Object.fromEntries(['utm_source', 'utm_content', 'utm_medium', 'utm_campaign'].map(key => [key, (params.get(key) || '').slice(0, 200)]));
-channel.form_version = 'us-cp-lead-first-v5';
+channel.form_version = 'us-cp-contact-first-v6';
 let analyticsReady = false;
 if (window.mixpanel && !isLocal) {
   try {
@@ -26,8 +26,8 @@ function buildPayload(contact) {
     name, email, phone: email, role: '', org: '', orgtype: '', use_case: '', interest: '',
     ...Object.fromEntries(Object.entries(channel).map(([k,v]) => [k, sheetText(v)])),
     channel: sheetText(channel.utm_source || 'direct'), track: 'center',
-    demo: '15-minute demo request', ask: 'Please email me to arrange a 15-minute demo.',
-    submitted_at: new Date().toISOString(), consent: 'Contact about this demo request; privacy notice 2026-09-27'
+    demo: '', ask: 'Please contact me about GemGem400.',
+    submitted_at: new Date().toISOString(), consent: 'Contact about this inquiry; privacy notice 2026-09-27'
   };
 }
 let calendarScriptPromise;
@@ -63,7 +63,20 @@ const button = document.getElementById('submit-button');
 const error = document.getElementById('form-error');
 const success = document.getElementById('success');
 const confirmation = document.getElementById('confirmation');
-let submitting = false, submitted = false;
+const bookButton = document.getElementById('book-demo');
+const calendarSection = document.getElementById('calendar-section');
+let submitting = false, submitted = false, capturedContact = null, calendarOpened = false;
+bookButton.addEventListener('click', () => {
+  if (!submitted || !capturedContact) return;
+  calendarSection.hidden = false;
+  bookButton.setAttribute('aria-expanded', 'true');
+  calendarSection.focus();
+  calendarSection.scrollIntoView({ behavior: 'auto', block: 'start' });
+  if (calendarOpened) return;
+  calendarOpened = true;
+  track('lead_calendar_open');
+  void showCalendar(capturedContact);
+});
 if (preview) document.getElementById('preview-note').hidden = false;
 form.addEventListener('submit', async event => {
   event.preventDefault();
@@ -84,12 +97,11 @@ form.addEventListener('submit', async event => {
       if (response.type !== 'opaque' && !response.ok) throw new Error('Request failed');
     }
     // Legacy Apps Script transport is opaque: it cannot confirm a stored row to this browser.
-    submitted = true;
+    submitted = true; capturedContact = contact;
     track('lead_submit', { receipt_verified: false });
     form.hidden = true; success.hidden = false;
     confirmation.focus();
     confirmation.scrollIntoView({ behavior: 'auto', block: 'start' });
-    void showCalendar(contact);
   } catch (_) {
     track('lead_webhook_error');
     error.hidden = false; button.disabled = false; button.textContent = 'Submit';

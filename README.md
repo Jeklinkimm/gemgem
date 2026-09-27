@@ -2,17 +2,17 @@
 
 Public URL: https://jeklinkimm.github.io/gemgem/
 
-Centered official GemGem400 logo → short headline → original children-playing image → “Request a 15-minute demo” link → name/email form with a separate “Submit” button. The CTA scrolls directly to the visible form at `#survey` on the same page. On successful transport, the form is replaced by a confirmation and optional inline Calendly calendar on the same page. Name and email are prefilled through Calendly's official embed API. No meeting is required to leave a request.
+Centered official GemGem400 logo → short headline → original children-playing image → name/email form → “Submit”. Successful contact submission replaces the form with “Thanks! We’ll be in touch.” and an arrow-free “Book a 15-minute demo” button. Only clicking that optional button reveals and loads the inline Calendly calendar, prefilling name and email. Everything stays on the same page. Repeated clicks do not create additional widgets or contact submissions. The `#survey` anchor still points to the contact form.
 
 Self-hosted Pretendard uses one family and 400/600 weights. The original photo retains its aspect ratio. Logo and blue colors follow the user's supplied logo.
 
 ## Data and booking
 
-The existing Google Apps Script webhook processes demo requests. Legacy `phone` receives the email; `ask` explains the follow-up request. No extra qualification fields are collected. Input is trimmed and spreadsheet formula-like strings are escaped for storage only. Names and email addresses are not sent to Mixpanel or saved in browser storage. Mixpanel events: `lead_view`, `lead_submit_attempt`, `lead_submit` (receipt_verified:false), and `lead_webhook_error`; submission is not a confirmed booking.
+The existing Google Apps Script webhook processes contact requests. Legacy `phone` receives the email; `ask` explains the follow-up request. No extra qualification fields are collected. Input is trimmed and spreadsheet formula-like strings are escaped for storage only. Names and email addresses are not sent to Mixpanel or saved in browser storage. Mixpanel events: `lead_view`, `lead_submit_attempt`, `lead_calendar_open`, `lead_submit` (receipt_verified:false), and `lead_webhook_error`; submission is not a confirmed booking.
 
 The cross-origin Apps Script request uses the existing `no-cors` transport, so browsers cannot inspect storage acknowledgment. A clearly marked integration test (`[TEST] Lead-first QA 2026-09-27`, `qa-lead-first@example.org`, no follow-up needed) returned HTTP 200 `ok` from the real endpoint on September 27. The destination spreadsheet row was not independently inspected. Network errors/timeouts preserve inputs and allow retry. Duplicate submissions are suppressed after success and while in flight.
 
-Calendly loads only after submission. Its failure never changes a sent request into a failed request; an external fallback remains available. The existing event URL and availability are unchanged:
+Calendly loads only when the optional booking button is clicked after successful contact submission. Its failure never changes a sent request into a failed request; an external fallback remains available. The existing event URL and availability are unchanged:
 https://calendly.com/jeklinkim-gemgem/15-minute-aacpdm-intro-call
 
 Official integration reference: https://calendly.com/help/how-to-pre-fill-invitee-information-in-an-embed

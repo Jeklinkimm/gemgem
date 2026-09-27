@@ -12,12 +12,12 @@
   <meta property="og:url" content="https://jeklinkimm.github.io/gemgem/">
   <meta property="og:type" content="website">
   <link rel="stylesheet" href="fonts/pretendard.css">
-  <link rel="stylesheet" href="site.css?v=20260927-5">
+  <link rel="stylesheet" href="site.css?v=20260927-6">
   <script defer src="https://cdn.jsdelivr.net/npm/mixpanel-browser@2/dist/mixpanel.umd.min.js"></script>
-  <script defer src="app.js?v=20260927-5"></script>
+  <script defer src="app.js?v=20260927-6"></script>
 </head>
 <body>
-<a class="skip-link" href="#survey">Skip to demo request</a>
+<a class="skip-link" href="#survey">Skip to contact form</a>
 <header class="site-header site-header--centered wrap">
   <a class="brand" href="./" aria-label="GemGem400 home"><img class="brand-logo" src="img/gemgem400-logo.png" width="4126" height="2977" alt="GemGem400"></a>
 </header>
@@ -27,22 +27,21 @@
     <figure class="product-visual">
       <img src="img/hero-scene.jpg" width="1000" height="680" alt="Children playing GemGem400 together on a tablet, with examples of the games below." fetchpriority="high">
     </figure>
-    <a class="demo-cta" href="#survey">Request a 15-minute demo <span aria-hidden="true">↓</span></a>
-    <section id="survey" class="inquiry" aria-label="Request a 15-minute demo" tabindex="-1">
+    <section id="survey" class="inquiry" aria-label="Contact GemGem" tabindex="-1">
       <p id="preview-note" class="preview-note" hidden>Preview — requests aren’t saved.</p>
       <form id="lead-form">
         <div class="field"><label for="name">Name</label><input id="name" name="name" autocomplete="name" placeholder="Full name" maxlength="120" required></div>
         <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" placeholder="you@organization.org" maxlength="254" required></div>
         <button class="submit-button" id="submit-button" type="submit">Submit</button>
-        <p class="form-note">We’ll email you to find a time. <a href="privacy.html" target="_blank" rel="noopener">Privacy</a></p>
+        <p class="form-note">We’ll be in touch by email. <a href="privacy.html" target="_blank" rel="noopener">Privacy</a></p>
         <p id="form-error" class="error-message" role="alert" hidden>We couldn’t send your request. Please try again or <a href="mailto:hello@gemgem.me">email us</a>.</p>
       </form>
       <div id="success" hidden>
         <div id="confirmation" class="confirmation" role="status" tabindex="-1">
-          <h2>Thanks. We’ll be in touch.</h2>
-          <p>You’re all set. Or choose a time below if you’re ready.</p>
+          <h2>Thanks! We’ll be in touch.</h2>
         </div>
-        <div class="calendar-section" aria-label="Optional: book your 15-minute demo now">
+        <button class="demo-cta" id="book-demo" type="button" aria-expanded="false" aria-controls="calendar-section">Book a 15-minute demo</button>
+        <div id="calendar-section" class="calendar-section" aria-label="Optional: book your 15-minute demo now" tabindex="-1" hidden>
           <div id="calendly-embed" class="calendar-embed"></div>
           <p class="calendar-fallback"><a href="https://calendly.com/jeklinkim-gemgem/15-minute-aacpdm-intro-call" target="_blank" rel="noopener">Calendar not loading? Open it here ↗</a></p>
         </div>
