@@ -54,18 +54,28 @@ function discordText_(value) {
 }
 
 function sendDiscord_(payload) {
-  const url = PropertiesService.getScriptProperties().getProperty('DISCORD_WEBHOOK_URL');
-  if (!url || !/^https:\/\/discord\.com\/api\/webhooks\/\d+\/[A-Za-z0-9_-]+$/.test(url)) throw new Error('Discord webhook not configured');
+  const properties = PropertiesService.getScriptProperties();
+  const remaining = Math.ceil((Number(properties.getProperty('DISCORD_BLOCKED_UNTIL')) - Date.now()) / 1000);
+  if (remaining > 0) { const error = new Error('Discord cooldown active'); error.retrySeconds = remaining; throw error; }
+  const relay = properties.getProperty('DISCORD_RELAY_URL');
+  const token = properties.getProperty('DISCORD_RELAY_TOKEN');
+  const webhook = properties.getProperty('DISCORD_WEBHOOK_URL');
+  if ((relay || token) && (!relay || !token || !/^https:\/\/[a-z0-9.-]+\.workers\.dev\/send$/.test(relay))) throw new Error('Discord relay not configured');
+  if (!relay && (!webhook || !/^https:\/\/discord\.com\/api\/webhooks\/\d+\/[A-Za-z0-9_-]+$/.test(webhook))) throw new Error('Discord webhook not configured');
+  const url = relay || webhook + '?wait=true';
+  const requestHeaders = relay ? {Authorization: 'Bearer ' + token} : {};
+
   for (let attempt = 0; attempt < 3; attempt++) {
     let response;
     try {
-      response = UrlFetchApp.fetch(url + '?wait=true', { method: 'post', contentType: 'application/json', payload: JSON.stringify(payload), muteHttpExceptions: true });
+      response = UrlFetchApp.fetch(url, { method: 'post', headers: requestHeaders, contentType: 'application/json', payload: JSON.stringify(payload), muteHttpExceptions: true });
     } catch (_) { throw new Error('Discord connection failed'); }
     const status = response.getResponseCode();
     let body = {};
     try { body = JSON.parse(response.getContentText()); } catch (_) {}
     if (status === 200) {
       if (!body.id) throw new Error('Discord receipt missing');
+      properties.deleteProperty('DISCORD_BLOCKED_UNTIL');
       return String(body.id);
     }
     // Only retry explicit rate limits; ambiguous failures could already have posted.
@@ -73,12 +83,14 @@ function sendDiscord_(payload) {
       const headers = response.getAllHeaders();
       const key = Object.keys(headers).find(k => k.toLowerCase() === 'retry-after');
       const retrySeconds = Math.max(Number(body.retry_after) || 0, Number(key ? headers[key] : 0) || 0, 2 * (attempt + 1));
+      properties.setProperty('DISCORD_BLOCKED_UNTIL', String(Date.now() + retrySeconds * 1000));
       if (retrySeconds <= 10) {
         Utilities.sleep(Math.ceil(retrySeconds * 1000) + 250);
         continue;
       }
       const error = new Error('Discord rate limited');
       error.retrySeconds = Math.max(300, retrySeconds);
+      properties.setProperty('DISCORD_BLOCKED_UNTIL', String(Date.now() + error.retrySeconds * 1000));
       throw error;
     }
     if (status === 429) {
@@ -86,6 +98,7 @@ function sendDiscord_(payload) {
       const headers = response.getAllHeaders();
       const key = Object.keys(headers).find(k => k.toLowerCase() === 'retry-after');
       error.retrySeconds = Math.max(300, Number(body.retry_after) || 0, Number(key ? headers[key] : 0) || 0);
+      properties.setProperty('DISCORD_BLOCKED_UNTIL', String(Date.now() + error.retrySeconds * 1000));
       throw error;
     }
     throw new Error('Discord request failed: HTTP ' + status + ' code ' + String(body.code || ''));

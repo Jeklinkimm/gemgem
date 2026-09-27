@@ -1,0 +1,6 @@
+name = "gemgem-discord-relay"
+main = "worker.mjs"
+compatibility_date = "2026-09-27"
+workers_dev = true
+[observability]
+enabled = false
