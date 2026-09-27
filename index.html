@@ -1,318 +1,80 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>잼잼 GemGem — 도입 문의 & 데모 신청</title>
-<meta property="og:title" content="잼잼 GemGem — 도입 문의 & 데모 신청">
-<meta property="og:description" content="아이들이 먼저 찾는 소근육·대근육 발달 수업. 센터 방문 데모 15분이면 충분해요.">
-<style>
-:root{
-  --bg:#FDF9F0; --ink:#241F17; --sub:#6B6254; --line:#E8E0D0;
-  --green:#1C7C54; --green-dk:#15603F; --amber:#F5A623; --red:#D64524;
-  --card:#FFFFFF; --radius:16px;
-}
-*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
-html{scroll-behavior:smooth}
-body{
-  background:var(--bg); color:var(--ink);
-  font-family:'Pretendard Variable',Pretendard,-apple-system,'Apple SD Gothic Neo','Noto Sans KR',sans-serif;
-  font-size:16px; line-height:1.6; min-height:100dvh;
-}
-.wrap{max-width:520px;margin:0 auto;padding:0 20px 60px}
-
-/* hero */
-.hero{padding:44px 0 8px;text-align:left}
-.logo{font-weight:800;font-size:15px;letter-spacing:.04em;color:var(--green);margin-bottom:18px}
-h1{font-size:25px;font-weight:800;line-height:1.42;letter-spacing:-.02em}
-h1 .hl{color:var(--green)}
-.sub{margin-top:12px;color:var(--sub);font-size:15px;line-height:1.7}
-.badges{display:flex;flex-wrap:wrap;gap:7px;margin-top:16px}
-.badge{font-size:12.5px;font-weight:600;background:#EFF7F0;color:var(--green-dk);border:1px solid #D8EBDD;padding:5px 11px;border-radius:20px}
-
-/* form card */
-.form-card{
-  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
-  margin-top:26px;padding:26px 22px;box-shadow:0 6px 24px rgba(36,31,23,.06);
-}
-.progress{height:6px;background:#F0EADD;border-radius:3px;overflow:hidden;margin-bottom:22px}
-.progress .bar{height:100%;background:var(--green);width:0%;transition:width .3s ease}
-.step-label{font-size:12px;font-weight:700;color:var(--green);letter-spacing:.08em;margin-bottom:8px}
-.q{font-size:19px;font-weight:700;line-height:1.5;margin-bottom:18px;word-break:keep-all}
-.q small{display:block;font-size:13px;font-weight:400;color:var(--sub);margin-top:4px}
-
-input[type=text],input[type=tel],textarea{
-  width:100%;font-size:17px;padding:14px 16px;border:1.5px solid var(--line);
-  border-radius:12px;background:#FCFAF5;color:var(--ink);outline:none;font-family:inherit;
-}
-input:focus,textarea:focus{border-color:var(--green);background:#fff}
-textarea{min-height:110px;resize:vertical}
-
-.choices{display:flex;flex-direction:column;gap:10px}
-.choice{
-  display:block;width:100%;text-align:left;font-size:16px;font-weight:600;font-family:inherit;
-  padding:15px 18px;border:1.5px solid var(--line);border-radius:12px;background:#FCFAF5;
-  color:var(--ink);cursor:pointer;transition:border-color .12s, background .12s;
-}
-.choice:active{transform:scale(.99)}
-.choice.sel{border-color:var(--green);background:#EFF7F0;color:var(--green-dk)}
-
-.nav{display:flex;gap:10px;margin-top:22px}
-button.primary{
-  flex:1;font-size:17px;font-weight:700;font-family:inherit;color:#fff;background:var(--green);
-  border:none;border-radius:12px;padding:15px 18px;cursor:pointer;
-}
-button.primary:disabled{opacity:.4;cursor:default}
-button.back{
-  font-size:15px;font-weight:600;font-family:inherit;color:var(--sub);background:transparent;
-  border:1.5px solid var(--line);border-radius:12px;padding:15px 16px;cursor:pointer;
-}
-.err{color:var(--red);font-size:13.5px;margin-top:8px;display:none}
-
-/* done screen */
-.done{text-align:center;padding:30px 6px}
-.done .big{font-size:44px;margin-bottom:14px}
-.done h2{font-size:21px;font-weight:800;margin-bottom:10px}
-.done p{color:var(--sub);font-size:15px;line-height:1.75}
-
-/* intro / brochure */
-.intro{margin-top:26px}
-.scene{width:100%;border-radius:var(--radius);display:block;box-shadow:0 6px 24px rgba(36,31,23,.08)}
-.sec-t{font-size:19px;font-weight:800;margin:30px 0 4px;letter-spacing:-.01em}
-.sec-t .bar{display:inline-block;width:22px;height:4px;border-radius:2px;background:var(--green);margin-right:9px;vertical-align:4px}
-.sec-p{color:var(--sub);font-size:14.5px;margin-bottom:14px}
-.rcard{display:flex;gap:12px;align-items:flex-start;background:var(--card);border:1px solid var(--line);
-  border-radius:14px;padding:15px 16px;margin-bottom:10px}
-.rcard .n{flex:none;width:26px;height:26px;border-radius:9px;background:var(--green);color:#fff;
-  font-size:14px;font-weight:800;display:flex;align-items:center;justify-content:center;margin-top:2px}
-.rcard .tt{font-size:15.5px;font-weight:700}
-.rcard .bd{font-size:13.5px;color:var(--sub);margin-top:2px}
-.shots{display:flex;gap:10px;overflow-x:auto;padding:4px 2px 8px;-webkit-overflow-scrolling:touch}
-.shots img{height:120px;border-radius:10px;border:3px solid #fff;box-shadow:0 3px 10px rgba(36,31,23,.12);flex:none}
-.stats{display:flex;flex-wrap:wrap;gap:7px;margin:14px 0 6px}
-.stat{font-size:13px;font-weight:700;background:#fff;border:1px solid var(--line);color:var(--ink);padding:6px 12px;border-radius:20px}
-.stat b{color:var(--green)}
-.clinic{font-size:12.5px;color:var(--sub);margin-top:4px}
-.form-title{font-size:18px;font-weight:800;margin:36px 0 10px}
-.foot{margin-top:34px;text-align:center;color:#B4AA97;font-size:12px;line-height:1.8}
-.foot a{color:inherit}
-@media (min-width:600px){ .hero{padding-top:64px} h1{font-size:28px} }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#215c4b">
+  <title>GemGem400 — Make movement feel like play.</title>
+  <meta name="description" content="Tablet-based hand and upper-limb games for clinician-guided practice. Explore how GemGem400 could fit your pediatric CP program in a 15-minute conversation.">
+  <meta property="og:title" content="GemGem400 — Make movement feel like play.">
+  <meta property="og:description" content="Hand and upper-limb games for clinician-guided practice. Let's explore the fit for your program.">
+  <meta property="og:image" content="https://jeklinkimm.github.io/gemgem/img/screen-beanstalk.jpg">
+  <meta property="og:url" content="https://jeklinkimm.github.io/gemgem/">
+  <meta property="og:type" content="website">
+  <link rel="stylesheet" href="site.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/mixpanel-browser@2/dist/mixpanel.umd.min.js"></script>
+  <script defer src="app.js"></script>
 </head>
 <body>
-<div class="wrap">
-  <header class="hero">
-    <div class="logo">잼잼 GemGem</div>
-    <h1>아이들이 먼저 찾는<br><span class="hl">소근육·대근육 수업</span></h1>
-    <div class="badges">
-      <span class="badge">대구 모든 특수학교 수업 중</span>
-      <span class="badge">인천 최대 방과후 센터 도입</span>
-      <span class="badge">발달 바우처 시작 가능</span>
-    </div>
-  </header>
+<a class="skip-link" href="#survey">Skip to the inquiry form</a>
+<header class="site-header wrap">
+  <a class="brand" href="./" aria-label="GemGem400 home"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>GemGem<span class="brand-number">400</span></a>
+  <a class="header-link" href="#survey">Let's talk <span aria-hidden="true">↗</span></a>
+</header>
+<main class="wrap">
+  <div class="landing-grid">
+    <section class="hero" aria-labelledby="hero-title">
+      <p class="eyebrow"><span aria-hidden="true"></span> For pediatric CP programs · U.S.</p>
+      <h1 id="hero-title">Make movement<br>feel like <em>play.</em></h1>
+      <p class="hero-description">Tablet-based hand and upper-limb games for <strong>clinician-guided practice.</strong></p>
+      <p class="hero-context">Give repetitive movements a playful purpose—in a 1:1 session or a clinician-guided home program.</p>
+      <a class="mobile-cta" href="#survey">Explore the fit for your program <span aria-hidden="true">↓</span></a>
+    </section>
 
-  <section class="intro">
-    <img class="scene" src="img/hero-scene.jpg" alt="잼잼 수업 장면 — 아이들이 게임 화면 앞에서 함께 놀아요">
+    <section class="survey" id="survey" aria-labelledby="survey-title" tabindex="-1">
+      <div class="form-topline"><span class="eyebrow">Start a conversation</span><span class="time-note">About 1 minute</span></div>
+      <h2 id="survey-title">Where could GemGem400<br>fit in your program?</h2>
+      <p class="form-intro">Tell us about your setting. Let's explore the fit in a 15-minute conversation.</p>
+      <form id="lead-form">
+        <p class="required-note">All six fields are required.</p>
+        <div class="fields">
+          <div class="field"><label for="name">Your name</label><input id="name" name="name" type="text" autocomplete="name" maxlength="120" placeholder="First and last name" required></div>
+          <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" maxlength="254" placeholder="you@organization.org" required></div>
+          <div class="field"><label for="role">Your role</label><select id="role" name="role" required><option value="" disabled selected>Select your role</option><option>Occupational therapist</option><option>Physical therapist</option><option>Physician</option><option>Program / clinic director</option><option>Researcher</option><option>Parent / caregiver</option><option>Other</option></select></div>
+          <div class="field"><label for="org">Organization</label><input id="org" name="org" type="text" autocomplete="organization" maxlength="180" placeholder="Organization or Individual" required></div>
+          <div class="field"><label for="use_case">Where might it fit?</label><select id="use_case" name="use_case" required><option value="" disabled selected>Select a setting</option><option>1:1 clinical sessions</option><option>Clinician-guided home practice</option><option>Both clinic and home</option><option>Research / feasibility study</option><option>Not sure yet</option></select></div>
+          <div class="field"><label for="interest">What would help next?</label><select id="interest" name="interest" required><option value="" disabled selected>Select a next step</option><option>A 15-minute demo & conversation</option><option>Product information</option><option>Research information</option><option>Explore a pilot for my program</option></select></div>
+        </div>
+        <p class="privacy-note">By submitting, you agree to email follow-up about this inquiry. Adult contact details only. <a href="privacy.html" target="_blank" rel="noopener">Privacy notice</a></p>
+        <button class="submit-button" type="submit" id="submit-button">Let's connect <span aria-hidden="true">↗</span></button>
+        <p class="error-message" id="form-error" role="alert" hidden>We couldn't send your request. Your answers are still here. Please try again or <a href="mailto:hello@gemgem.me">email us</a>.</p>
+        <p class="form-footnote">No commitment. We'll follow up by email.</p>
+      </form>
+      <div class="success" id="success" role="status" tabindex="-1" hidden>
+        <span class="success-icon" aria-hidden="true">↗</span>
+        <h3>Thank you for connecting.</h3>
+        <p>Your request has been sent. We look forward to learning about your program.</p>
+        <p>If you don't hear from us, please reach out to <a href="mailto:hello@gemgem.me">hello@gemgem.me</a>.</p>
+      </div>
+      <noscript><p class="error-message">Please enable JavaScript to use this form, or email <a href="mailto:hello@gemgem.me">hello@gemgem.me</a>.</p></noscript>
+    </section>
 
-    <div class="sec-t"><span class="bar"></span>잼잼400은요</div>
-    <p class="sec-p">카메라가 아이의 손동작·몸동작을 인식하는 <b>대소근육 운동 게임</b>이에요.
-    장비 없이 태블릿 하나로, 아이가 스스로 플레이하는 발달 수업이 됩니다.</p>
-
-    <div class="rcard"><div class="n">1</div><div>
-      <div class="tt">아이가 먼저 “또 하고 싶다”고 해요</div>
-      <div class="bd">인천 최대 규모 발달센터에서 2년째 반마다 운영 중</div></div></div>
-    <div class="rcard"><div class="n">2</div><div>
-      <div class="tt">장비 없이, 태블릿 하나로</div>
-      <div class="bd">세팅이 쉬워요. 게임이 시범·반복·피드백을 대신합니다</div></div></div>
-    <div class="rcard"><div class="n">3</div><div>
-      <div class="tt">발달이 기록으로 남아요</div>
-      <div class="bd">아이별 데이터 자동 기록 · 보호자 전송 · 발달 바우처 가능</div></div></div>
-
-    <div class="sec-t"><span class="bar"></span>이런 게임으로 수업해요</div>
-    <div class="shots">
-      <img src="img/screen-menu.jpg" alt="게임 선택 화면">
-      <img src="img/screen-beanstalk.jpg" alt="콩나무 모험 게임">
-      <img src="img/screen-colorful.jpg" alt="풍선 터뜨리기 게임 — 아이가 화면에 나와요">
-    </div>
-
-    <div class="stats">
-      <span class="stat">특수학교 <b>10여 곳</b></span>
-      <span class="stat">복지관 <b>12곳</b></span>
-      <span class="stat">게임 완주율 <b>87~100%</b></span>
-    </div>
-    <p class="clinic">서울아산병원 · 신촌 세브란스병원 · 유타대병원 임상연구 진행 중</p>
-
-  </section>
-
-  <div class="form-title">데모 신청 · 도입 문의 <span style="font-weight:600;font-size:13.5px;color:var(--sub)">— 방문 데모 15분이면 충분해요</span></div>
-  <div class="form-card" id="card">
-    <div class="progress"><div class="bar" id="bar"></div></div>
-    <div id="stage"></div>
+    <figure class="product-visual">
+      <div class="game-frame"><img src="img/screen-beanstalk.jpg" width="800" height="450" alt="GemGem400 adventure game: hand movements move a character along a beanstalk." fetchpriority="high"></div>
+      <figcaption><span class="caption-dot" aria-hidden="true"></span> A hand movement. A response in the game. A reason to try again.</figcaption>
+    </figure>
   </div>
 
-  <p class="foot">잼잼테라퓨틱스 · hello@gemgem.me<br>남겨주신 정보는 도입 상담 목적으로만 사용됩니다.</p>
-</div>
-
-<script src="https://cdn.jsdelivr.net/npm/mixpanel-browser@2/dist/mixpanel.umd.min.js"></script>
-<script>
-/* ================= CONFIG ================= */
-const CONFIG = {
-  MIXPANEL_TOKEN: "7d0c521971a70f26652f621797d6efaa",
-  SHEETS_WEBHOOK: "https://script.google.com/macros/s/AKfycbw1VbabSevaAc_DXiqG7VVd3Bs_Zaj-2RfK8eC_wPuCRYsVlon9BO9NJS0M_5YcSqNj/exec"
-};
-/* ========================================== */
-
-const utm = new URLSearchParams(location.search);
-const CH = {
-  utm_source: utm.get("utm_source") || "direct",
-  utm_content: utm.get("utm_content") || "none",
-  referrer: document.referrer || ""
-};
-let MP_ON = false;
-if (CONFIG.MIXPANEL_TOKEN && window.mixpanel && typeof mixpanel.init === "function") {
-  try {
-    mixpanel.init(CONFIG.MIXPANEL_TOKEN, {persistence:"localStorage"});
-    mixpanel.register(CH);
-    MP_ON = true;
-  } catch(e) { console.warn("mixpanel init fail", e); }
-}
-function track(ev, props={}) {
-  const payload = {...CH, ...props};
-  if (MP_ON) { try { mixpanel.track(ev, payload); } catch(e){} }
-  else { console.log("[track]", ev, payload); }
-  try { // 로컬 백업 (미제출 복구용 아님 — 디버그)
-    const log = JSON.parse(localStorage.getItem("gg_events")||"[]");
-    log.push({ev, ...payload, t: Date.now()});
-    localStorage.setItem("gg_events", JSON.stringify(log.slice(-200)));
-  } catch(e){}
-}
-
-/* --- 문항 정의 --- */
-const STEPS = [
-  {id:"role",    label:"기본 정보", q:"어떤 분이세요?", type:"choice", required:true,
-    opts:["센터·기관 운영/근무","보호자"]},
-  {id:"channel", label:"기본 정보", q:"어떻게 알게 되셨나요?", type:"choice", required:true,
-    opts:["오티즘엑스포 부스","인스타그램","지인 소개","기타"]},
-  // 센터 트랙
-  {id:"org",     track:"center", label:"센터·기관", q:"센터·기관명을 알려주세요", type:"text", ph:"○○아동발달센터", required:true},
-  {id:"region",  track:"center", label:"센터·기관", q:"지역이 어디세요?", type:"text", ph:"예: 성남시 분당구"},
-  {id:"orgtype", track:"center", label:"센터·기관", q:"기관 유형을 골라주세요", type:"choice",
-    opts:["발달센터","방과후·주간활동","지역아동센터","복지관","학교·유치원","기타"]},
-  {id:"demo",    track:"center", label:"센터·기관", q:"방문 데모, 언제가 편하세요?", type:"choice",
-    sub:"아이들 5~6명과 실제 수업으로 보여드립니다. 준비물은 저희가 다 가져가요.",
-    opts:["다음주 화요일 오전","화요일 오후","목요일 오전","목요일 오후","일정 조율 필요"]},
-  // 보호자 트랙
-  {id:"age",     track:"parent", label:"보호자", q:"자녀 나이가 어떻게 되나요?", type:"text", ph:"예: 7살"},
-  {id:"center",  track:"parent", label:"보호자", q:"다니는 센터·학교가 있다면 알려주세요", sub:"전달드릴 소개 자료를 보내드려요", type:"text", ph:"센터·학교 이름"},
-  // 연락처는 마지막
-  {id:"name",    label:"연락처", q:"성함을 알려주세요", type:"text",  ph:"홍길동", required:true},
-  {id:"phone",   label:"연락처", q:"연락처 (휴대폰)", sub:"숫자만 입력하셔도 돼요", type:"tel", ph:"01000000000", required:true,
-    valid: v => (v.replace(/\D/g,"").length >= 7) || "연락 가능한 번호를 남겨주세요"},
-];
-
-let answers = {};
-let path = [];        // 실제로 지나온 step index 기록 (뒤로가기용)
-let cur = 0;          // STEPS index
-let started = false;
-const stage = document.getElementById("stage");
-const bar = document.getElementById("bar");
-
-function trackOf(){ return answers.role ? (answers.role.startsWith("센터") ? "center" : "parent") : null; }
-function visibleSteps(){
-  const t = trackOf();
-  return STEPS.filter(s => !s.track || s.track === t || !answers.role);
-}
-function totalForProgress(){
-  const t = trackOf();
-  if (!t) return 8; // 최악 기준
-  return STEPS.filter(s => !s.track || s.track===t).length;
-}
-function stepNumber(){
-  const t = trackOf();
-  const upto = STEPS.slice(0, cur+1).filter(s => !s.track || s.track===t);
-  return upto.length;
-}
-
-function nextIndex(from){
-  const t = trackOf();
-  for (let i = from+1; i < STEPS.length; i++){
-    const s = STEPS[i];
-    if (!s.track) return i;
-    if (t && s.track === t) return i;
-    if (!t) return i; // role 전엔 공통만 나오므로 도달 안 함
-  }
-  return -1; // 끝
-}
-
-function render(){
-  const s = STEPS[cur];
-  const num = stepNumber(), tot = totalForProgress();
-  bar.style.width = Math.round((num-1)/tot*100) + "%";
-  let inner = `<div class="step-label">${s.label} · ${num}/${tot}</div>
-    <div class="q">${s.q}${s.sub?`<small>${s.sub}</small>`:""}</div>`;
-  if (s.type === "choice"){
-    inner += `<div class="choices">` + s.opts.map(o =>
-      `<button type="button" class="choice ${answers[s.id]===o?'sel':''}" data-v="${o}">${o}</button>`).join("") + `</div>`;
-  } else if (s.type === "textarea"){
-    inner += `<textarea id="inp" placeholder="${s.ph||''}">${answers[s.id]||""}</textarea>`;
-  } else {
-    inner += `<input id="inp" type="${s.type}" placeholder="${s.ph||''}" value="${answers[s.id]||""}" ${s.type==='tel'?'inputmode="tel"':''}>`;
-  }
-  inner += `<div class="err" id="err"></div><div class="nav">`;
-  if (path.length) inner += `<button type="button" class="back" id="btn-back">이전</button>`;
-  const isLast = nextIndex(cur) === -1;
-  inner += `<button type="button" class="primary" id="btn-next">${isLast ? "제출하기" : "다음"}</button></div>`;
-  stage.innerHTML = inner;
-
-  stage.querySelectorAll(".choice").forEach(c => c.addEventListener("click", () => {
-    stage.querySelectorAll(".choice").forEach(x=>x.classList.remove("sel"));
-    c.classList.add("sel");
-    answers[s.id] = c.dataset.v;
-    setTimeout(advance, 200); // 선택형은 자동 진행
-  }));
-  const inp = document.getElementById("inp");
-  if (inp) { inp.focus(); inp.addEventListener("keydown", e => { if(e.key==="Enter" && s.type!=="textarea"){ e.preventDefault(); advance(); } }); }
-  document.getElementById("btn-next").addEventListener("click", advance);
-  const bb = document.getElementById("btn-back");
-  if (bb) bb.addEventListener("click", goBack);
-
-
-}
-
-function advance(){
-  const s = STEPS[cur];
-  const inp = document.getElementById("inp");
-  if (inp) answers[s.id] = inp.value.trim();
-  const v = answers[s.id] || "";
-  const err = document.getElementById("err");
-  if (s.required && !v){ err.textContent = "이 항목은 필수예요"; err.style.display="block"; return; }
-  if (s.valid && v){ const r = s.valid(v); if (r !== true){ err.textContent = r; err.style.display="block"; return; } }
-  if (!started){ started = true; track("lead_start"); }
-  track("lead_step", { step_id: s.id, step_name: s.q, step_number: stepNumber(), track: trackOf() || "pre" });
-  const nx = nextIndex(cur);
-  if (nx === -1){ submit(); return; }
-  path.push(cur); cur = nx; render();
-}
-function goBack(){ if (!path.length) return; cur = path.pop(); render(); }
-
-async function submit(){
-  bar.style.width = "100%";
-  const payload = { ...answers, track: trackOf(), ...CH, submitted_at: new Date().toISOString(), ua: navigator.userAgent };
-  track("lead_submit", payload);
-  try { localStorage.setItem("gg_last_submit", JSON.stringify(payload)); } catch(e){}
-  if (CONFIG.SHEETS_WEBHOOK){
-    try { await fetch(CONFIG.SHEETS_WEBHOOK, { method:"POST", mode:"no-cors", headers:{"Content-Type":"text/plain"}, body: JSON.stringify(payload) }); }
-    catch(e){ track("lead_webhook_error", {msg: String(e)}); }
-  }
-  stage.innerHTML = `<div class="done">
-    <div class="big">🙌</div>
-    <h2>감사합니다!</h2>
-    <p>48시간 안에 연락드릴게요.<br>센터 데모는 방문해서 아이들과<br><b>실제 수업</b>으로 보여드립니다.</p>
-  </div>`;
-}
-
-track("lead_view");
-render();
-</script>
+  <section class="workflow" aria-labelledby="workflow-title">
+    <div class="workflow-heading"><p class="eyebrow">You guide the practice.</p><h2 id="workflow-title">The game brings the play.</h2></div>
+    <ol class="workflow-steps">
+      <li><span class="step-number">01</span><div><h3>Choose the movement</h3><p>Select a hand or upper-limb activity and adjust the level for the child.</p></div></li>
+      <li><span class="step-number">02</span><div><h3>Give repetition a purpose</h3><p>The camera recognizes hand movements and turns them into a response in the game.</p></div></li>
+      <li><span class="step-number">03</span><div><h3>Bring activity into the conversation</h3><p>Review session activity to support the next session or a home-practice conversation.</p></div></li>
+    </ol>
+  </section>
+  <aside class="practice-note"><p><strong>Built close to practice.</strong> Our team also operates a pediatric development center in Korea.</p><p>GemGem400 supports clinician-guided practice. It does not replace professional care. Game responses and activity reports are not clinical assessments.</p></aside>
+</main>
+<footer class="site-footer wrap"><span>© <span id="year">2026</span> GemGem Therapeutics</span><nav aria-label="Footer"><a href="mailto:hello@gemgem.me">hello@gemgem.me</a><a href="privacy.html">Privacy</a></nav></footer>
 </body>
 </html>
