@@ -1,56 +1,21 @@
-# GemGem400 U.S. CP program inquiry page
+# GemGem400 U.S. CP landing page
 
 Public URL: https://jeklinkimm.github.io/gemgem/
 
-English B2B landing page aligned with the September 2026 AACPDM booth brief: **Make movement feel like play.** Tablet-based hand and upper-limb games for clinician-guided practice. No clinical-outcome or assessment-accuracy claims.
+Minimal page: brand → headline → original children-playing image → one Calendly booking button. Mobile uses a single column with 18px button text and the same Pretendard family throughout. Image preserves its full aspect ratio. The legacy `#survey` anchor points to booking for existing links.
 
-## Layout
+The CTA links directly to the existing 15-minute event:
+https://calendly.com/jeklinkim-gemgem/15-minute-aacpdm-intro-call
 
-- Desktop: headline and original children-playing image beside the inquiry form; no long introduction before the form.
-- Mobile: brief headline → original children-playing image → form. Removed the workflow, company background, duplicate descriptions, and image caption.
-- Header links directly to `#survey`.
-- Six fields on one page, with no Next/Back navigation or conditional steps: name, email, role, organization, intended setting, 1:1 discussion topic.
-- Existing QR URLs, including `?utm_source=expo&utm_content=parent_card`, continue working and preserve campaign tags. They no longer select different questionnaires.
+Calendly currently collects name and email after time selection. Its title/description still refer to AACPDM; those account settings have not been edited. The landing page no longer submits to Google Sheets or collects contact details. Historical submissions remain untouched.
 
-The primary CTA is **Book a 15-minute 1:1**. The form requests a meeting; GemGem follows up by email to arrange a time. There is no live calendar or automatic booking confirmation.
+## Preview and checks
 
-Typography uses locally hosted Pretendard Variable v1.3.9 subsets under the SIL Open Font License (`fonts/OFL.txt`). All page elements use the same Pretendard family, with only 400/600 weights. Mobile labels are 16px, body/input/button text 18px, and supporting notes 14px. Up to 960px the layout uses a single column; inputs are at least 52px high. Verified at 320, 375, 390, 430, and 768px without horizontal overflow.
+No build step. Run `python3 -m http.server 8769 --bind 127.0.0.1`.
+Run `node --test tests/booking.test.cjs` for analytics-failure and click-event checks.
 
-## Files and local preview
-
-`index.html`, `site.css`, `app.js`, `privacy.html`, existing `img/` assets, and `fonts/`. No build step.
-
-```sh
-python3 -m http.server 8769 --bind 127.0.0.1
-node --test tests/form.test.cjs
-```
-
-## Submission and legacy Google Sheet compatibility
-
-The Google Apps Script webhook and Mixpanel project token in `app.js` are the existing public configuration. No backend deployment was changed.
-
-The legacy script uses fixed columns. Preserve these mappings until it is deliberately migrated:
-
-| Current answer | Named payload field | Existing sheet column |
-| --- | --- | --- |
-| Name | `name` | `name` |
-| Email | `email` | **`phone` (now stores contact email)** |
-| Role | `role` | `role` and `orgtype` |
-| Organization | `org` | `org` |
-| Intended setting | `use_case` | included in `ask` |
-| Discussion topic | `interest` | included in `ask`; `demo` records `15-minute 1:1 with GemGem` |
-| Campaign | `utm_*` | existing `utm_source`, `utm_content`, and `channel` |
-
-`track` remains `center` or `parent` for compatibility; the parent option uses the same one-page form. Do not drop `phone` or `ask` without updating the deployed sheet handler: unknown new keys may otherwise be discarded by its fixed column list. Formula-like user strings are escaped before sending.
-
-Submissions use `POST`, `text/plain`, and `no-cors`, as before. A fulfilled opaque response cannot prove the row was stored in Google Sheets. The UI says the request was sent, not that a booking was confirmed, and supplies a direct email fallback. Network failure, readable HTTP error, or a 20-second timeout keeps answers visible and allows retry. Duplicate clicks while a request is in flight are suppressed. Automated tests mock the transport and **do not create production leads**. End-to-end sheet receipt has not been reverified.
-
-## Analytics and privacy
-
-Events: `lead_view`, `lead_cta_click`, `lead_start`, `lead_field_complete` (field ID only), `lead_submit_attempt`, `lead_submit` (`receipt_verified: false`), `lead_webhook_error`.
-
-Names, emails, organizations, and answers are **not sent to Mixpanel** or copied into local storage. This replaces the old full-payload event/local backup. Analytics is disabled on localhost; an unavailable analytics library does not block the form. Autocapture and session recording are disabled. The English privacy notice describes the actual services used.
+Mixpanel records `lead_view` and `lead_cta_click` with campaign tags. A click is not recorded as a confirmed booking. Tracking errors do not block navigation; the link works without JavaScript. Autocapture and session recording are disabled. Analytics is disabled on localhost. Self-hosted Pretendard Variable v1.3.9 uses the SIL Open Font License in `fonts/OFL.txt`.
 
 ## Publishing
 
-GitHub Pages serves `main` at the repository root. Push a commit to `main` and check the Pages build before reporting deployment complete. Existing untracked `direction.html` is unrelated and should not be included.
+GitHub Pages serves main at the repository root. Push and verify Pages deployment. Do not include unrelated untracked `direction.html`.
