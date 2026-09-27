@@ -13,13 +13,16 @@ function run(mixpanel) {
   });
   return handlers;
 }
-test('booking remains a normal link without analytics or JavaScript', () => {
+test('booking scrolls inline and retains an external fallback without analytics', () => {
   for (const analytics of [undefined, {init(){throw Error('blocked')}}, {init(){}, track(){throw Error('blocked')}}]) {
     const handlers = run(analytics);
     assert.doesNotThrow(() => handlers.click());
   }
   const html = fs.readFileSync('index.html', 'utf8');
-  assert.match(html, /data-booking href="https:\/\/calendly.com\/jeklinkim-gemgem\/15-minute-aacpdm-intro-call"/);
+  assert.match(html, /data-booking href="#survey"/);
+  assert.match(html, /id="survey" class="calendar-section"/);
+  assert.match(html, /class="calendly-inline-widget"/);
+  assert.match(html, /href="https:\/\/calendly.com\/jeklinkim-gemgem\/15-minute-aacpdm-intro-call"/);
   assert.doesNotMatch(html, /<form\b/);
 });
 test('records campaign-attributed clicks, never a booking confirmation', () => {

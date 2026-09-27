@@ -52,3 +52,12 @@ h1 .accent { color: var(--orange); }
   .privacy-page h1 { font-size: 34px; }
 }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+.calendar-section { margin-top: 24px; scroll-margin-top: 16px; }
+.calendly-inline-widget { width: 100%; min-width: 320px; height: 750px; }
+.calendar-fallback { margin: 8px 0 0; text-align: center; font-size: 14px; color: var(--muted); }
+.calendar-fallback a { display: inline-flex; align-items: center; min-height: 44px; }
+@media (max-width: 351px) {
+  .calendar-section { margin-inline: -16px; }
+  .calendar-fallback { padding-inline: 16px; }
+}

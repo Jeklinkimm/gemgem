@@ -1,6 +1,6 @@
 const params = new URLSearchParams(location.search);
 const channel = Object.fromEntries(['utm_source', 'utm_content', 'utm_medium', 'utm_campaign'].map(key => [key, (params.get(key) || '').slice(0, 200)]));
-channel.page_version = 'us-cp-calendly-v3';
+channel.page_version = 'us-cp-calendly-inline-v4';
 let analyticsReady = false;
 if (window.mixpanel && !['localhost', '127.0.0.1', '::1'].includes(location.hostname)) {
   try {

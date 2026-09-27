@@ -12,9 +12,10 @@
   <meta property="og:url" content="https://jeklinkimm.github.io/gemgem/">
   <meta property="og:type" content="website">
   <link rel="stylesheet" href="fonts/pretendard.css">
-  <link rel="stylesheet" href="site.css?v=20260926-7">
+  <link rel="stylesheet" href="site.css?v=20260926-8">
   <script defer src="https://cdn.jsdelivr.net/npm/mixpanel-browser@2/dist/mixpanel.umd.min.js"></script>
-  <script defer src="app.js?v=20260926-7"></script>
+  <script defer src="app.js?v=20260926-8"></script>
+  <script defer src="https://assets.calendly.com/assets/external/widget.js"></script>
 </head>
 <body>
 <a class="skip-link" href="#survey">Skip to booking</a>
@@ -27,9 +28,13 @@
     <figure class="product-visual">
       <img src="img/hero-scene.jpg" width="1000" height="680" alt="Children playing GemGem400 together on a tablet, with examples of the games below." fetchpriority="high">
     </figure>
-    <div id="survey" class="booking" tabindex="-1">
-      <a class="booking-button" data-booking href="https://calendly.com/jeklinkim-gemgem/15-minute-aacpdm-intro-call">Book a 15-minute demo <span aria-hidden="true">↗</span></a>
+    <div class="booking">
+      <a class="booking-button" data-booking href="#survey">Book a 15-minute demo <span aria-hidden="true">↓</span></a>
     </div>
+    <section id="survey" class="calendar-section" aria-label="Choose a time for your 15-minute demo" tabindex="-1">
+      <div class="calendly-inline-widget" data-url="https://calendly.com/jeklinkim-gemgem/15-minute-aacpdm-intro-call?hide_event_type_details=1&amp;primary_color=215c4b" data-resize="true"></div>
+      <p class="calendar-fallback"><a href="https://calendly.com/jeklinkim-gemgem/15-minute-aacpdm-intro-call" target="_blank" rel="noopener">Calendar not loading? Open it here ↗</a></p>
+    </section>
   </section>
 </main>
 <footer class="site-footer wrap"><span>© <span id="year">2026</span> GemGem Therapeutics</span><nav aria-label="Footer"><a href="mailto:hello@gemgem.me">hello@gemgem.me</a><a href="privacy.html">Privacy</a></nav></footer>
