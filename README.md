@@ -9,8 +9,10 @@ English B2B landing page aligned with the September 2026 AACPDM booth brief: **M
 - Desktop: headline and gameplay beside the inquiry form; no long introduction before the form.
 - Mobile: short introduction → form → gameplay and supporting details.
 - Header and mobile introduction link directly to `#survey`.
-- Six fields on one page, with no Next/Back navigation or conditional steps: name, email, role, organization, intended setting, requested follow-up.
+- Six fields on one page, with no Next/Back navigation or conditional steps: name, email, role, organization, intended setting, 1:1 discussion topic.
 - Existing QR URLs, including `?utm_source=expo&utm_content=parent_card`, continue working and preserve campaign tags. They no longer select different questionnaires.
+
+The primary CTA is **Book a 15-minute 1:1**. The form requests a meeting; GemGem follows up by email to arrange a time. There is no live calendar or automatic booking confirmation.
 
 ## Files and local preview
 
@@ -34,7 +36,7 @@ The legacy script uses fixed columns. Preserve these mappings until it is delibe
 | Role | `role` | `role` and `orgtype` |
 | Organization | `org` | `org` |
 | Intended setting | `use_case` | included in `ask` |
-| Requested next step | `interest` | `demo` and included in `ask` |
+| Discussion topic | `interest` | included in `ask`; `demo` records `15-minute 1:1 with GemGem` |
 | Campaign | `utm_*` | existing `utm_source`, `utm_content`, and `channel` |
 
 `track` remains `center` or `parent` for compatibility; the parent option uses the same one-page form. Do not drop `phone` or `ask` without updating the deployed sheet handler: unknown new keys may otherwise be discarded by its fixed column list. Formula-like user strings are escaped before sending.

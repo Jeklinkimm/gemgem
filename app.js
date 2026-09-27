@@ -10,7 +10,7 @@ const channel = {
   utm_content: (params.get('utm_content') || 'none').slice(0, 200),
   utm_medium: (params.get('utm_medium') || '').slice(0, 200),
   utm_campaign: (params.get('utm_campaign') || '').slice(0, 200),
-  form_version: 'us-cp-single-page-v1'
+  form_version: 'us-cp-15min-1to1-v2'
 };
 let analyticsReady = false;
 if (window.mixpanel && !['localhost', '127.0.0.1', '::1'].includes(location.hostname)) {
@@ -41,8 +41,8 @@ function buildPayload(form) {
     phone: answers.email, // Legacy contact column: preserve the email without a backend migration.
     channel: sheetText(channel.utm_source),
     orgtype: answers.role,
-    demo: answers.interest,
-    ask: 'Setting: ' + answers.use_case + '; Next step: ' + answers.interest,
+    demo: '15-minute 1:1 with GemGem',
+    ask: 'Setting: ' + answers.use_case + '; 1:1 discussion topic: ' + answers.interest,
     consent: 'Contact about this inquiry; privacy notice 2026-09-26'
   };
 }
@@ -86,7 +86,7 @@ form.addEventListener('submit', async event => {
     track('lead_webhook_error');
     error.hidden = false;
     button.disabled = false;
-    button.textContent = "Let's connect ↗";
+    button.textContent = "Request my 15-minute 1:1 ↗";
   } finally {
     clearTimeout(timeout);
     submitting = false;

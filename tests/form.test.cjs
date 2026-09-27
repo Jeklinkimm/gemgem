@@ -6,7 +6,7 @@ const source = fs.readFileSync('app.js', 'utf8');
 
 function setup(fetchImplementation = async () => ({type:'opaque', ok:false})) {
   const handlers = {};
-  const values = {name:' Test Person ', email:'person@example.org', role:'Occupational therapist', org:'Test Clinic', use_case:'Both clinic and home', interest:'Product information'};
+  const values = {name:' Test Person ', email:'person@example.org', role:'Occupational therapist', org:'Test Clinic', use_case:'Both clinic and home', interest:'How GemGem400 works'};
   const events = [], requests = [], timers = [];
   const controls = ['name','email','org'].map(name => ({name, get value(){return values[name]},set value(v){values[name]=v}}));
   const form = {hidden:false, valid:true, addEventListener:(name, fn)=>handlers[name]=fn, querySelectorAll:()=>controls, reportValidity(){return this.valid}};
@@ -29,7 +29,7 @@ test('all six answers and email survive the legacy sheet contract; UTMs are reta
   const h=setup();await h.submit();
   const payload=JSON.parse(h.requests[0].options.body);
   assert.equal(payload.name,'Test Person');assert.equal(payload.email,'person@example.org');assert.equal(payload.phone,payload.email);
-  assert.equal(payload.demo,'Product information');assert.match(payload.ask,/Both clinic and home/);
+  assert.equal(payload.demo,'15-minute 1:1 with GemGem');assert.equal(payload.interest,'How GemGem400 works');assert.match(payload.ask,/Both clinic and home/);
   assert.equal(payload.utm_source,'expo');assert.equal(payload.utm_content,'parent_card');assert.equal(payload.track,'center');
   assert.equal(h.form.hidden,true);assert.equal(h.success.hidden,false);assert.equal(h.success.focused,true);
   assert.equal(h.events.find(e=>e.event==='lead_submit').properties.receipt_verified,false);
