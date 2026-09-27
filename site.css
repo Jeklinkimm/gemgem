@@ -19,9 +19,6 @@ h1, h2, strong { font-weight: 600; }
 .site-header { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 80px; }
 .brand { display: inline-flex; align-items: center; text-decoration: none; font-size: 29px; font-weight: 600; letter-spacing: -1.2px; white-space: nowrap; }
 .brand-number { font-size: 21px; margin-left: 4px; }
-.brand-mark { display: grid; grid-template-columns: 9px 9px; gap: 3px; transform: rotate(-12deg); margin-right: 10px; }
-.brand-mark i { height: 9px; background: var(--green); border-radius: 3px; }
-.brand-mark i:last-child { background: #d67955; }
 .landing { padding: 12px 0 32px; }
 h1 { font-size: clamp(40px, 6vw, 60px); line-height: 1.06; letter-spacing: -2px; margin: 0 0 28px; }
 h1 .accent { color: var(--orange); }
@@ -54,4 +51,11 @@ h1 .accent { color: var(--orange); }
 @media (max-width: 351px) {
   .calendar-section { margin-inline: -16px; }
   .calendar-fallback { padding-inline: 16px; }
+}
+
+.site-header--centered { justify-content: center; padding-block: 20px; }
+.brand-logo { display: block; width: 144px; height: auto; }
+@media (max-width: 600px) {
+  .site-header--centered { padding-block: 16px; }
+  .brand-logo { width: 120px; }
 }

@@ -2,7 +2,7 @@
 
 Public URL: https://jeklinkimm.github.io/gemgem/
 
-Minimal page: brand → headline → original children-playing image → inline Calendly calendar. Mobile uses a single column with the same Pretendard family throughout. Image preserves its full aspect ratio. The `#survey` anchor scrolls to the calendar on the same page.
+Minimal page: centered official GemGem400 logo (user-supplied transparent PNG) → headline → original children-playing image → inline Calendly calendar. Mobile uses a single column with the same Pretendard family throughout. Image preserves its full aspect ratio. The `#survey` anchor scrolls to the calendar on the same page.
 
 The official auto-resizing Calendly embed shows the existing 15-minute event:
 https://calendly.com/jeklinkim-gemgem/15-minute-aacpdm-intro-call
