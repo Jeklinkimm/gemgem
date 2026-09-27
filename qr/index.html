@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>GemGem400 QR — A4 Print</title>
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="../fonts/pretendard.css">
+<style>
+* { box-sizing: border-box; }
+body { margin: 0; color: #000; background: #eee; font-family: 'Pretendard Variable', sans-serif; text-align: center; }
+.controls { padding: 20px; }
+button, .download { display: inline-block; padding: 12px 20px; margin: 4px; font: inherit; font-size: 18px; }
+button { color: #fff; background: #215c4b; border: 0; border-radius: 8px; cursor: pointer; }
+.controls p { margin: 8px 0; font-size: 16px; }
+.sheet { width: min(210mm, 100%); min-height: 297mm; margin: 0 auto 24px; padding: 32mm 15mm; background: white; }
+h1 { margin: 0 0 8mm; font-size: 36pt; font-weight: 600; }
+.subtitle { font-size: 20pt; margin: 0 0 12mm; }
+.qr { display: block; width: min(120mm, 100%); height: auto; margin: auto; }
+.address { font-size: 13pt; margin-top: 12mm; }
+@page { size: A4 portrait; margin: 0; }
+@media print {
+  body { background: #fff; }
+  .controls { display: none !important; }
+  .sheet { width: 100%; min-height: 0; margin: 0; break-inside: avoid; }
+}
+@media screen and (max-width: 600px) {
+  .sheet { min-height: 0; padding: 40px 20px; }
+  h1 { font-size: 32px; }
+  .subtitle { font-size: 22px; }
+}
+</style>
+</head>
+<body>
+<div class="controls">
+  <button type="button" onclick="window.print()">Print / 인쇄</button>
+  <a class="download" href="code.png" download="GemGem400-QR.png">Download QR image</a>
+  <p>A4 · Portrait · Scale 100% · Headers and footers off</p>
+  <p>Or press Ctrl+P (Windows) / ⌘P (Mac).</p>
+</div>
+<main class="sheet">
+  <h1>GemGem400</h1>
+  <p class="subtitle">Make movement feel like play.</p>
+  <img class="qr" src="code.png" width="1272" height="1272" alt="Scan to visit the GemGem400 website">
+  <p class="address">jeklinkimm.github.io/gemgem</p>
+</main>
+</body>
+</html>
