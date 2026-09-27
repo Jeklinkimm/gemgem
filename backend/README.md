@@ -1,19 +1,13 @@
-# Discord lead notifications — authorization pending
+# Discord lead notifications
 
-Prepared September 27, 2026. `Code.gs` is saved in the existing bound Apps Script editor, but **the live web app still uses version 3 without notifications**. No existing lead rows were modified.
+Activated September 27, 2026 in Apps Script web-app version 6, preserving the existing endpoint and owner/access settings. Google external-request authorization is complete.
 
-The provided Discord webhook belongs to a forum channel. New submissions create one forum post per lead. A direct, clearly marked test post was confirmed by Discord HTTP 200 (message/thread `1553815193190928444`). This verifies the webhook only, not the Apps Script integration.
+Each new contact is stored in the existing `리드` sheet first, then sent as a separate Discord forum post containing name, email, KST submission time, and a link to the sheet row. Existing rows are preserved and are not replayed.
 
-The webhook secret is stored in the project's Script Properties as `DISCORD_WEBHOOK_URL`; it is not in this repository or the frontend. Google currently denies `UrlFetchApp.fetch` because its external-request scope has not been authorized. The official authorization URL returned by Apps Script leads to a Google account redirect error in the in-app browser. Owner authorization in a regular browser is the remaining prerequisite.
+The secret is stored only in Script Properties as `DISCORD_WEBHOOK_URL`. Never put it in the frontend or repository. `Code.gs` is the source for the bound Apps Script project; pushing this repository does not deploy Apps Script.
 
-## Resume activation
+The backend adds explicit email and Discord status/timestamp/message receipt/retry-time columns. Status is `pending`, `sent`, `rate_limited`, or `failed`. A Discord HTTP 200 plus message ID is required before marking sent. Mentions are disabled. Formula-like values are escaped in spreadsheet cells.
 
-1. Open the existing Apps Script project `11_vnB3X-eVpjQAXyQUzlszS9CkGGMtdORDy7HKkMtuVF-pnyGOCsFt3-` as `projectalbaam@gmail.com` and complete authorization for external requests. `testDiscordConnection` logs the official authorization URL if authorization is still missing.
-2. Run `testDiscordConnection` and verify its Discord message receipt.
-3. Update the existing version-3 web app deployment to a new version; preserve its deployment ID/URL, execute-as and access settings. Do not create a replacement endpoint.
-4. Submit one clearly marked test via the landing page and verify both the saved sheet row and Discord forum post. Do not book a Calendly meeting.
-5. Update privacy.html to disclose Discord notifications and README.md to describe the active integration, then deploy the frontend docs.
+Discord returned intermittent HTTP 429 during verification. Explicit 429 responses retry at most twice, honoring the response delay when it is at most 10 seconds; longer limits stop without retrying early. Network failures and other ambiguous errors are not automatically retried to avoid duplicate notifications. Rate-limited contacts are queued with their earliest retry time. The installed time-driven `retryDiscordNotifications` trigger checks every five minutes and processes at most three due contacts, stopping if the shared limit is hit. Sent contacts and old rows are skipped. Other failed contacts remain in the sheet for manual review. Delivery can be delayed by Discord limits.
 
-The backend preserves legacy columns, adds an explicit email column and notification status/receipt columns, saves the lead before sending, uses Discord `wait=true`, prevents automatic mentions, and keeps contacts on notification failure. Failed notifications are marked `failed`; automatic retry is not configured. Prior submissions are not re-posted.
-
-Offline checks: `node --test tests/discord.test.cjs`.
+`testDiscordConnection` sends one labeled test forum post. `testLeadDelivery` also saves a labeled test contact. Offline checks: `node --test tests/discord.test.cjs`.
