@@ -7,16 +7,18 @@ English B2B landing page aligned with the September 2026 AACPDM booth brief: **M
 ## Layout
 
 - Desktop: headline and gameplay beside the inquiry form; no long introduction before the form.
-- Mobile: short introduction → form → gameplay and supporting details.
-- Header and mobile introduction link directly to `#survey`.
+- Mobile: brief headline → form → gameplay. Removed the workflow, company background, duplicate descriptions, and image caption.
+- Header links directly to `#survey`.
 - Six fields on one page, with no Next/Back navigation or conditional steps: name, email, role, organization, intended setting, 1:1 discussion topic.
 - Existing QR URLs, including `?utm_source=expo&utm_content=parent_card`, continue working and preserve campaign tags. They no longer select different questionnaires.
 
 The primary CTA is **Book a 15-minute 1:1**. The form requests a meeting; GemGem follows up by email to arrange a time. There is no live calendar or automatic booking confirmation.
 
+Typography uses locally hosted Pretendard Variable v1.3.9 subsets under the SIL Open Font License (`fonts/OFL.txt`). Mobile labels are 16px, body/input/button text 18px, and supporting notes 14px.
+
 ## Files and local preview
 
-`index.html`, `site.css`, `app.js`, `privacy.html`, existing `img/` assets. No build step.
+`index.html`, `site.css`, `app.js`, `privacy.html`, existing `img/` assets, and `fonts/`. No build step.
 
 ```sh
 python3 -m http.server 8769 --bind 127.0.0.1

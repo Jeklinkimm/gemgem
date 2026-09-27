@@ -86,7 +86,7 @@ form.addEventListener('submit', async event => {
     track('lead_webhook_error');
     error.hidden = false;
     button.disabled = false;
-    button.textContent = "Request my 15-minute 1:1 ↗";
+    button.textContent = "Request a 1:1 ↗";
   } finally {
     clearTimeout(timeout);
     submitting = false;
