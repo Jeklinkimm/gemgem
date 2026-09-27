@@ -1,10 +1,10 @@
 :root {
   --paper: #faf8f1;
-  --ink: #0b4c70;
-  --muted: #58695f;
-  --green: #0b4c70;
-  --line: #dce2d8;
-  --orange: #1289cb;
+  --ink: #294957;
+  --muted: #5d6e78;
+  --action: #087db7;
+  --line: #dce7ec;
+  --accent: #1476a4;
   --font: 'Pretendard Variable', sans-serif;
 }
 * { box-sizing: border-box; }
@@ -12,7 +12,7 @@ html { scroll-behavior: smooth; scroll-padding-top: 16px; -webkit-text-size-adju
 body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--font); font-size: 18px; line-height: 1.5; }
 a { color: inherit; text-underline-offset: 3px; -webkit-tap-highlight-color: transparent; }
 h1, h2, strong { font-weight: 600; }
-:focus-visible { outline: 3px solid var(--orange); outline-offset: 4px; }
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
 .wrap { width: min(680px, calc(100% - 48px)); margin-inline: auto; }
 .skip-link { position: absolute; top: -120px; left: 16px; background: white; padding: 12px; z-index: 10; }
 .skip-link:focus { top: 8px; }
@@ -21,7 +21,7 @@ h1, h2, strong { font-weight: 600; }
 .brand-number { font-size: 21px; margin-left: 4px; }
 .landing { padding: 12px 0 32px; }
 h1 { font-size: clamp(40px, 6vw, 60px); line-height: 1.06; letter-spacing: -2px; margin: 0 0 28px; }
-h1 .accent { color: var(--orange); }
+h1 .accent { color: var(--accent); }
 .product-visual { margin: 0; }
 .product-visual img { display: block; width: 100%; height: auto; border-radius: 16px; }
 .site-footer { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 8px; padding-block: 16px; border-top: 1px solid var(--line); font-size: 14px; color: var(--muted); }
@@ -62,20 +62,20 @@ h1 .accent { color: var(--orange); }
 
 [hidden] { display: none !important; }
 .inquiry { margin-top: 32px; scroll-margin-top: 16px; }
-.demo-cta { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 56px; margin-top: 20px; padding: 14px 16px; border-radius: 9px; background: var(--green); color: #fff; font-size: 18px; font-weight: 600; text-decoration: none; }
-.demo-cta:hover { background: #083b57; }
+.demo-cta { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 56px; margin-top: 20px; padding: 14px 16px; border: 1px solid #9acfe5; border-radius: 9px; background: #eaf6fc; color: #17658a; font-size: 18px; font-weight: 600; text-decoration: none; }
+.demo-cta:hover { background: #dceff9; border-color: #65b2d4; }
 .field + .field { margin-top: 16px; }
 .field label { display: block; margin-bottom: 6px; font-size: 16px; font-weight: 600; }
-.field input { width: 100%; min-height: 54px; border: 1px solid #cbd5ca; border-radius: 9px; background: #fff; color: var(--ink); padding: 12px 14px; font: inherit; font-size: 18px; }
-.field input::placeholder { color: #68746c; }
-.submit-button { display: flex; align-items: center; justify-content: center; gap: 12px; width: 100%; min-height: 56px; margin-top: 20px; padding: 14px 16px; border: 0; border-radius: 9px; background: var(--green); color: #fff; font: inherit; font-size: 18px; font-weight: 600; cursor: pointer; }
-.submit-button:hover { background: #083b57; }
+.field input { width: 100%; min-height: 54px; border: 1px solid #cbdbe3; border-radius: 9px; background: #fff; color: var(--ink); padding: 12px 14px; font: inherit; font-size: 18px; }
+.field input::placeholder { color: #657681; }
+.submit-button { display: flex; align-items: center; justify-content: center; gap: 12px; width: 100%; min-height: 56px; margin-top: 20px; padding: 14px 16px; border: 0; border-radius: 9px; background: var(--action); color: #fff; font: inherit; font-size: 18px; font-weight: 600; cursor: pointer; }
+.submit-button:hover { background: #066a9c; }
 .submit-button:disabled { opacity: .65; cursor: wait; }
 .form-note { margin: 12px 0 0; font-size: 14px; color: var(--muted); }
 .error-message { color: #943820; font-size: 16px; }
 .confirmation { padding-block: 4px; }
 .confirmation h2 { margin: 0 0 8px; font-size: 28px; line-height: 1.2; letter-spacing: -.6px; }
 .confirmation p { margin: 0; font-size: 18px; color: var(--muted); }
-.preview-note { border: 1px dashed var(--orange); padding: 8px 12px; font-size: 14px; }
+.preview-note { border: 1px dashed var(--accent); padding: 8px 12px; font-size: 14px; }
 
-#hero-title { text-align: center; font-size: clamp(20px, 6vw, 40px); line-height: 1.25; letter-spacing: -.035em; white-space: nowrap; margin-bottom: 24px; }
+#hero-title { color: var(--accent); text-align: center; font-size: clamp(20px, 6vw, 40px); line-height: 1.25; letter-spacing: -.035em; white-space: nowrap; margin-bottom: 24px; }

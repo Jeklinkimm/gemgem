@@ -49,7 +49,7 @@ async function showCalendar(contact) {
   try {
     await loadCalendly();
     window.Calendly.initInlineWidget({
-      url: CONFIG.CALENDLY_URL + '?hide_event_type_details=1&primary_color=0b4c70',
+      url: CONFIG.CALENDLY_URL + '?hide_event_type_details=1&primary_color=087db7',
       parentElement: container, resize: true,
       prefill: { name: contact.name, email: contact.email },
       utm: { utmSource: channel.utm_source, utmContent: channel.utm_content, utmMedium: channel.utm_medium, utmCampaign: channel.utm_campaign }
