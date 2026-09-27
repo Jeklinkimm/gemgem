@@ -14,7 +14,7 @@ English B2B landing page aligned with the September 2026 AACPDM booth brief: **M
 
 The primary CTA is **Book a 15-minute 1:1**. The form requests a meeting; GemGem follows up by email to arrange a time. There is no live calendar or automatic booking confirmation.
 
-Typography uses locally hosted Pretendard Variable v1.3.9 subsets under the SIL Open Font License (`fonts/OFL.txt`). Mobile labels are 16px, body/input/button text 18px, and supporting notes 14px.
+Typography uses locally hosted Pretendard Variable v1.3.9 subsets under the SIL Open Font License (`fonts/OFL.txt`). All page elements use the same Pretendard family, with only 400/600 weights. Mobile labels are 16px, body/input/button text 18px, and supporting notes 14px. Up to 960px the layout uses a single column; inputs are at least 52px high. Verified at 320, 375, 390, 430, and 768px without horizontal overflow.
 
 ## Files and local preview
 

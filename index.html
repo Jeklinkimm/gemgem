@@ -12,7 +12,7 @@
   <meta property="og:url" content="https://jeklinkimm.github.io/gemgem/">
   <meta property="og:type" content="website">
   <link rel="stylesheet" href="fonts/pretendard.css">
-  <link rel="stylesheet" href="site.css?v=20260926-3">
+  <link rel="stylesheet" href="site.css?v=20260926-4">
   <script defer src="https://cdn.jsdelivr.net/npm/mixpanel-browser@2/dist/mixpanel.umd.min.js"></script>
   <script defer src="app.js?v=20260926-3"></script>
 </head>
@@ -26,19 +26,19 @@
   <div class="landing-grid">
     <section class="hero" aria-labelledby="hero-title">
       <p class="eyebrow"><span aria-hidden="true"></span> For pediatric CP programs</p>
-      <h1 id="hero-title">Make movement<br>feel like <em>play.</em></h1>
+      <h1 id="hero-title">Make movement<br>feel like <span class="accent">play.</span></h1>
       <p class="hero-description">Hand &amp; upper-limb games.<br><strong>Guided by you.</strong></p>
     </section>
 
     <section class="survey" id="survey" aria-labelledby="survey-title" tabindex="-1">
-      <h2 id="survey-title">Book a 15-minute 1:1</h2>
+      <h2 id="survey-title">Book a <span class="keep-together">15-minute 1:1</span></h2>
       <form id="lead-form">
         <div class="fields">
-          <div class="field"><label for="name">Name</label><input id="name" name="name" type="text" autocomplete="name" maxlength="120" placeholder="First and last name" required></div>
-          <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" maxlength="254" placeholder="you@organization.org" required></div>
-          <div class="field"><label for="role">Role</label><select id="role" name="role" required><option value="" disabled selected>Select your role</option><option>Occupational therapist</option><option>Physical therapist</option><option>Physician</option><option>Program / clinic director</option><option>Researcher</option><option>Parent / caregiver</option><option>Other</option></select></div>
-          <div class="field"><label for="org">Organization</label><input id="org" name="org" type="text" autocomplete="organization" maxlength="180" placeholder="Organization or Individual" required></div>
-          <div class="field"><label for="use_case">Practice setting</label><select id="use_case" name="use_case" required><option value="" disabled selected>Select a setting</option><option>1:1 clinical sessions</option><option>Clinician-guided home practice</option><option>Both clinic and home</option><option>Research / feasibility study</option><option>Not sure yet</option></select></div>
+          <div class="field"><label for="name">Name</label><input id="name" name="name" type="text" autocomplete="name" maxlength="120" placeholder="Full name" required></div>
+          <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" maxlength="254" placeholder="you@work.com" required></div>
+          <div class="field"><label for="role">Role</label><select id="role" name="role" required><option value="" disabled selected>Select your role</option><option>Occupational therapist</option><option>Physical therapist</option><option>Physician</option><option value="Program / clinic director">Program director</option><option>Researcher</option><option>Parent / caregiver</option><option>Other</option></select></div>
+          <div class="field"><label for="org">Organization</label><input id="org" name="org" type="text" autocomplete="organization" maxlength="180" placeholder="Clinic or organization" required></div>
+          <div class="field"><label for="use_case">Practice setting</label><select id="use_case" name="use_case" required><option value="" disabled selected>Select a setting</option><option>1:1 clinical sessions</option><option value="Clinician-guided home practice">Home practice</option><option>Both clinic and home</option><option value="Research / feasibility study">Research study</option><option>Not sure yet</option></select></div>
           <div class="field"><label for="interest">Meeting topic</label><select id="interest" name="interest" required><option value="" disabled selected>Select a topic</option><option>How GemGem400 works</option><option>Fit for my program</option><option>Research and evidence</option><option>A potential pilot</option></select></div>
         </div>
         <p class="privacy-note">For meeting follow-up only. <a href="privacy.html" target="_blank" rel="noopener">Privacy</a></p>
