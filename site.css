@@ -1,10 +1,10 @@
 :root {
   --paper: #faf8f1;
-  --ink: #203d34;
+  --ink: #0b4c70;
   --muted: #58695f;
-  --green: #215c4b;
+  --green: #0b4c70;
   --line: #dce2d8;
-  --orange: #b74c31;
+  --orange: #1289cb;
   --font: 'Pretendard Variable', sans-serif;
 }
 * { box-sizing: border-box; }
@@ -45,7 +45,7 @@ h1 .accent { color: var(--orange); }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 
 .calendar-section { margin-top: 24px; scroll-margin-top: 16px; }
-.calendly-inline-widget { width: 100%; min-width: 320px; height: 750px; }
+.calendar-embed { width: 100%; min-width: 320px; height: 750px; }
 .calendar-fallback { margin: 8px 0 0; text-align: center; font-size: 14px; color: var(--muted); }
 .calendar-fallback a { display: inline-flex; align-items: center; min-height: 44px; }
 @media (max-width: 351px) {
@@ -59,3 +59,21 @@ h1 .accent { color: var(--orange); }
   .site-header--centered { padding-block: 16px; }
   .brand-logo { width: 120px; }
 }
+
+[hidden] { display: none !important; }
+.inquiry { margin-top: 24px; scroll-margin-top: 16px; }
+.field + .field { margin-top: 16px; }
+.field label { display: block; margin-bottom: 6px; font-size: 16px; font-weight: 600; }
+.field input { width: 100%; min-height: 54px; border: 1px solid #cbd5ca; border-radius: 9px; background: #fff; color: var(--ink); padding: 12px 14px; font: inherit; font-size: 18px; }
+.field input::placeholder { color: #68746c; }
+.submit-button { display: flex; align-items: center; justify-content: space-between; gap: 12px; width: 100%; min-height: 56px; margin-top: 20px; padding: 14px 16px; border: 0; border-radius: 9px; background: var(--green); color: #fff; font: inherit; font-size: 18px; font-weight: 600; cursor: pointer; }
+.submit-button:hover { background: #083b57; }
+.submit-button:disabled { opacity: .65; cursor: wait; }
+.form-note { margin: 12px 0 0; font-size: 14px; color: var(--muted); }
+.error-message { color: #943820; font-size: 16px; }
+.confirmation { padding-block: 4px; }
+.confirmation h2 { margin: 0 0 8px; font-size: 28px; line-height: 1.2; letter-spacing: -.6px; }
+.confirmation p { margin: 0; font-size: 18px; color: var(--muted); }
+.preview-note { border: 1px dashed var(--orange); padding: 8px 12px; font-size: 14px; }
+
+#hero-title { text-align: center; font-size: clamp(20px, 6vw, 40px); line-height: 1.25; letter-spacing: -.035em; white-space: nowrap; margin-bottom: 24px; }
