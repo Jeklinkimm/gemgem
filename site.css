@@ -61,12 +61,14 @@ h1 .accent { color: var(--orange); }
 }
 
 [hidden] { display: none !important; }
-.inquiry { margin-top: 24px; scroll-margin-top: 16px; }
+.inquiry { margin-top: 32px; scroll-margin-top: 16px; }
+.demo-cta { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 56px; margin-top: 20px; padding: 14px 16px; border-radius: 9px; background: var(--green); color: #fff; font-size: 18px; font-weight: 600; text-decoration: none; }
+.demo-cta:hover { background: #083b57; }
 .field + .field { margin-top: 16px; }
 .field label { display: block; margin-bottom: 6px; font-size: 16px; font-weight: 600; }
 .field input { width: 100%; min-height: 54px; border: 1px solid #cbd5ca; border-radius: 9px; background: #fff; color: var(--ink); padding: 12px 14px; font: inherit; font-size: 18px; }
 .field input::placeholder { color: #68746c; }
-.submit-button { display: flex; align-items: center; justify-content: space-between; gap: 12px; width: 100%; min-height: 56px; margin-top: 20px; padding: 14px 16px; border: 0; border-radius: 9px; background: var(--green); color: #fff; font: inherit; font-size: 18px; font-weight: 600; cursor: pointer; }
+.submit-button { display: flex; align-items: center; justify-content: center; gap: 12px; width: 100%; min-height: 56px; margin-top: 20px; padding: 14px 16px; border: 0; border-radius: 9px; background: var(--green); color: #fff; font: inherit; font-size: 18px; font-weight: 600; cursor: pointer; }
 .submit-button:hover { background: #083b57; }
 .submit-button:disabled { opacity: .65; cursor: wait; }
 .form-note { margin: 12px 0 0; font-size: 14px; color: var(--muted); }

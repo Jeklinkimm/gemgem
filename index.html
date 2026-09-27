@@ -12,9 +12,9 @@
   <meta property="og:url" content="https://jeklinkimm.github.io/gemgem/">
   <meta property="og:type" content="website">
   <link rel="stylesheet" href="fonts/pretendard.css">
-  <link rel="stylesheet" href="site.css?v=20260927-3">
+  <link rel="stylesheet" href="site.css?v=20260927-4">
   <script defer src="https://cdn.jsdelivr.net/npm/mixpanel-browser@2/dist/mixpanel.umd.min.js"></script>
-  <script defer src="app.js?v=20260927-2"></script>
+  <script defer src="app.js?v=20260927-4"></script>
 </head>
 <body>
 <a class="skip-link" href="#survey">Skip to demo request</a>
@@ -27,12 +27,13 @@
     <figure class="product-visual">
       <img src="img/hero-scene.jpg" width="1000" height="680" alt="Children playing GemGem400 together on a tablet, with examples of the games below." fetchpriority="high">
     </figure>
+    <a class="demo-cta" href="#survey">Request a 15-minute demo <span aria-hidden="true">↓</span></a>
     <section id="survey" class="inquiry" aria-label="Request a 15-minute demo" tabindex="-1">
       <p id="preview-note" class="preview-note" hidden>Preview — requests aren’t saved.</p>
       <form id="lead-form">
         <div class="field"><label for="name">Name</label><input id="name" name="name" autocomplete="name" placeholder="Full name" maxlength="120" required></div>
         <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" placeholder="you@organization.org" maxlength="254" required></div>
-        <button class="submit-button" id="submit-button" type="submit">Request a 15-minute demo <span aria-hidden="true">↗</span></button>
+        <button class="submit-button" id="submit-button" type="submit">Submit</button>
         <p class="form-note">We’ll email you to find a time. <a href="privacy.html" target="_blank" rel="noopener">Privacy</a></p>
         <p id="form-error" class="error-message" role="alert" hidden>We couldn’t send your request. Please try again or <a href="mailto:hello@gemgem.me">email us</a>.</p>
       </form>

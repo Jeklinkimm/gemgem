@@ -92,7 +92,7 @@ form.addEventListener('submit', async event => {
     void showCalendar(contact);
   } catch (_) {
     track('lead_webhook_error');
-    error.hidden = false; button.disabled = false; button.textContent = 'Request a 15-minute demo ↗';
+    error.hidden = false; button.disabled = false; button.textContent = 'Submit';
   } finally {
     clearTimeout(timeout); submitting = false;
   }

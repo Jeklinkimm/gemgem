@@ -2,7 +2,7 @@
 
 Public URL: https://jeklinkimm.github.io/gemgem/
 
-Centered official GemGem400 logo → short headline → original children-playing image → name/email form. The primary action is “Request a 15-minute demo”. On successful transport, the form is replaced by a confirmation and optional inline Calendly calendar on the same page. Name and email are prefilled through Calendly's official embed API. No meeting is required to leave a request. The `#survey` anchor points to the form.
+Centered official GemGem400 logo → short headline → original children-playing image → “Request a 15-minute demo” link → name/email form with a separate “Submit” button. The CTA scrolls directly to the visible form at `#survey` on the same page. On successful transport, the form is replaced by a confirmation and optional inline Calendly calendar on the same page. Name and email are prefilled through Calendly's official embed API. No meeting is required to leave a request.
 
 Self-hosted Pretendard uses one family and 400/600 weights. The original photo retains its aspect ratio. Logo and blue colors follow the user's supplied logo.
 
