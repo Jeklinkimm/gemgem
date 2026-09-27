@@ -12,6 +12,7 @@ html { scroll-behavior: smooth; scroll-padding-top: 16px; -webkit-text-size-adju
 body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--font); font-size: 18px; line-height: 1.5; }
 a { color: inherit; text-underline-offset: 3px; }
 h1, h2, h3, a, button, input, select, option, label { font-family: var(--font); }
+h1, h2, h3, strong, b { font-weight: 600; }
 button, input, select { font: inherit; }
 button, a, input, select { -webkit-tap-highlight-color: transparent; }
 button { cursor: pointer; }
