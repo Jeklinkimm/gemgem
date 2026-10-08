@@ -1,55 +1,287 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <meta name="theme-color" content="#087db7">
-  <title>GemGem400 — Make movement feel like play.</title>
-  <meta name="description" content="Tablet-based hand and upper-limb games for clinician-guided practice. Explore how GemGem400 could fit your pediatric CP program in a 15-minute conversation.">
-  <meta property="og:title" content="GemGem400 — Make movement feel like play.">
-  <meta property="og:description" content="Hand and upper-limb games for clinician-guided practice. Let's explore the fit for your program.">
-  <meta property="og:image" content="https://jeklinkimm.github.io/gemgem/img/hero-scene.jpg">
-  <meta property="og:url" content="https://jeklinkimm.github.io/gemgem/">
-  <meta property="og:type" content="website">
-  <link rel="stylesheet" href="fonts/pretendard.css">
-  <link rel="stylesheet" href="site.css?v=20260927-6">
-  <script defer src="https://cdn.jsdelivr.net/npm/mixpanel-browser@2/dist/mixpanel.umd.min.js"></script>
-  <script defer src="app.js?v=20260927-6"></script>
+<!DOCTYPE html><html class="scroll-smooth" lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title class="">GemGem400 — CP Therapy Teams</title>
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&amp;family=Nunito+Sans:ital,opsz,wght@0,6..12,700;0,6..12,800;0,6..12,900;1,6..12,700;1,6..12,800&amp;display=swap" rel="stylesheet" class="">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "tertiary": "#225eab",
+            "on-tertiary-fixed-variant": "#00468c",
+            "surface-dim": "#cdd9fe",
+            "surface-cream-subtle": "#F5F1EA",
+            "inverse-primary": "#ffb4a5",
+            "surface-bright": "#faf8ff",
+            "surface-variant": "#d9e2ff",
+            "on-secondary-fixed": "#00201d",
+            "alert-warm": "#E0533C",
+            "on-error-container": "#93000a",
+            "inverse-surface": "#143324",
+            "secondary": "#183B2B",
+            "tertiary-container": "#6699ea",
+            "primary-fixed-dim": "#ffb4a5",
+            "error-container": "#ffdad6",
+            "border-warm": "#E8E2D9",
+            "secondary-fixed": "#D4E85B",
+            "error": "#ba1a1a",
+            "coral-tint": "#FFF0ED",
+            "surface": "#FAF8F5",
+            "on-primary-fixed": "#3f0400",
+            "surface-cream": "#FDFBF7",
+            "on-secondary-fixed-variant": "#005049",
+            "on-error": "#ffffff",
+            "primary-container": "#FA6B50",
+            "on-background": "#111827",
+            "surface-tint": "#ac331e",
+            "outline": "#8c716b",
+            "surface-container-highest": "#d9e2ff",
+            "navy-muted": "#4B556D",
+            "secondary-container": "#D4E85B",
+            "on-primary": "#ffffff",
+            "background": "#FAF8F5",
+            "on-primary-fixed-variant": "#8b1b07",
+            "tertiary-fixed-dim": "#a9c7ff",
+            "on-secondary": "#ffffff",
+            "mint-tint": "#E6F8F6",
+            "outline-variant": "#e0bfb9",
+            "on-surface": "#111827",
+            "primary-fixed": "#ffdad3",
+            "surface-container-lowest": "#ffffff",
+            "on-surface-variant": "#59413d",
+            "on-tertiary-container": "#003064",
+            "success-leaf": "#28965A",
+            "surface-card": "#FFFFFF",
+            "on-primary-container": "#650a00",
+            "inverse-on-surface": "#FDFBF7",
+            "primary": "#ac331e",
+            "surface-container-low": "#f2f3ff",
+            "secondary-fixed-dim": "#4fdbcc",
+            "surface-container-high": "#e1e8ff",
+            "surface-container": "#e9edff",
+            "on-tertiary": "#ffffff",
+            "on-secondary-container": "#143324",
+            "tertiary-fixed": "#d6e3ff",
+            "on-tertiary-fixed": "#001b3d"
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "2xl": "1rem",
+            "3xl": "1.5rem",
+            "full": "9999px"
+          },
+          spacing: {
+            "container-padding-mobile": "1rem",
+            "space-3xl": "4rem",
+            "space-lg": "1.5rem",
+            "container-padding-desktop": "2.5rem",
+            "space-xxs": "0.25rem",
+            "space-md": "1rem",
+            "space-xs": "0.5rem",
+            "space-xl": "2rem",
+            "space-sm": "0.75rem",
+            "space-2xl": "3rem",
+            "target-min-size": "3.5rem"
+          },
+          fontFamily: {
+            "label-md": ["Plus Jakarta Sans"],
+            "title-lg": ["Plus Jakarta Sans"],
+            "headline-sm": ["Plus Jakarta Sans"],
+            "headline-lg-mobile": ["Plus Jakarta Sans"],
+            "body-sm": ["Plus Jakarta Sans"],
+            "display-hero-mobile": ["Plus Jakarta Sans"],
+            "display-hero": ["Plus Jakarta Sans"],
+            "label-sm": ["Plus Jakarta Sans"],
+            "title-sm": ["Plus Jakarta Sans"],
+            "headline-md": ["Plus Jakarta Sans"],
+            "body-md": ["Plus Jakarta Sans"],
+            "body-lg": ["Plus Jakarta Sans"],
+            "label-lg": ["Plus Jakarta Sans"],
+            "headline-lg": ["Plus Jakarta Sans"]
+          },
+          fontSize: {
+            "label-md": ["12px", { lineHeight: "16px", letterSpacing: "0.02em", fontWeight: "600" }],
+            "title-lg": ["18px", { lineHeight: "26px", fontWeight: "600" }],
+            "headline-sm": ["20px", { lineHeight: "28px", fontWeight: "600" }],
+            "headline-lg-mobile": ["26px", { lineHeight: "34px", letterSpacing: "-0.01em", fontWeight: "700" }],
+            "body-sm": ["14px", { lineHeight: "20px", fontWeight: "400" }],
+            "display-hero-mobile": ["34px", { lineHeight: "42px", letterSpacing: "-0.015em", fontWeight: "800" }],
+            "display-hero": ["48px", { lineHeight: "56px", letterSpacing: "-0.02em", fontWeight: "800" }],
+            "label-sm": ["11px", { lineHeight: "14px", letterSpacing: "0.04em", fontWeight: "700" }],
+            "title-sm": ["16px", { lineHeight: "24px", fontWeight: "600" }],
+            "headline-md": ["24px", { lineHeight: "32px", letterSpacing: "-0.005em", fontWeight: "700" }],
+            "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+            "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
+            "label-lg": ["14px", { lineHeight: "20px", letterSpacing: "0.01em", fontWeight: "600" }],
+            "headline-lg": ["32px", { lineHeight: "40px", letterSpacing: "-0.01em", fontWeight: "700" }]
+          }
+        }
+      }
+    };
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 500, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+  </style>
 </head>
-<body>
-<a class="skip-link" href="#survey">Skip to contact form</a>
-<header class="site-header site-header--centered wrap">
-  <a class="brand" href="./" aria-label="GemGem400 home"><img class="brand-logo" src="img/gemgem400-logo.png" width="4126" height="2977" alt="GemGem400"></a>
-</header>
-<main class="wrap">
-  <section class="landing" aria-labelledby="hero-title">
-    <h1 id="hero-title">Make movement feel like play.</h1>
-    <figure class="product-visual">
-      <img src="img/hero-scene.jpg" width="1000" height="680" alt="Children playing GemGem400 together on a tablet, with examples of the games below." fetchpriority="high">
-    </figure>
-    <section id="survey" class="inquiry" aria-label="Contact GemGem" tabindex="-1">
-      <p id="preview-note" class="preview-note" hidden>Preview — requests aren’t saved.</p>
-      <form id="lead-form">
-        <div class="field"><label for="name">Name</label><input id="name" name="name" autocomplete="name" placeholder="Full name" maxlength="120" required></div>
-        <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" placeholder="you@organization.org" maxlength="254" required></div>
-        <button class="submit-button" id="submit-button" type="submit">Submit</button>
-        <p class="form-note">We’ll be in touch by email. <a href="privacy.html" target="_blank" rel="noopener">Privacy</a></p>
-        <p id="form-error" class="error-message" role="alert" hidden>We couldn’t send your request. Please try again or <a href="mailto:contact@gemgem.me">email us</a>.</p>
-      </form>
-      <div id="success" hidden>
-        <div id="confirmation" class="confirmation" role="status" tabindex="-1">
-          <h2>Thanks! We’ll be in touch.</h2>
-        </div>
-        <button class="demo-cta" id="book-demo" type="button" aria-expanded="false" aria-controls="calendar-section">Book a 15-minute demo</button>
-        <div id="calendar-section" class="calendar-section" aria-label="Optional: book your 15-minute demo now" tabindex="-1" hidden>
-          <div id="calendly-embed" class="calendar-embed"></div>
-          <p class="calendar-fallback"><a href="https://calendly.com/jeklinkim-gemgem/15-minute-aacpdm-intro-call" target="_blank" rel="noopener">Calendar not loading? Open it here ↗</a></p>
-        </div>
+<body class="bg-surface text-on-surface antialiased selection:bg-primary-container selection:text-white" style="font-family: &quot;Avenir Next&quot;, Avenir, &quot;Segoe UI&quot;, sans-serif; font-weight: 400;">
+<!-- 1. TOP APP BAR / HEADER -->
+<header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-[#CFE2EE] px-5 sm:px-6 lg:px-10 py-3.5 sm:py-4"><div class="max-w-7xl mx-auto flex items-center justify-between gap-4"><div class="flex items-center gap-8 flex-shrink-0"><a href="#" class="flex items-center gap-2 hover:opacity-95 transition-opacity flex-shrink-0"><img src="./img/gemgem400-logo.png" alt="GemGem400 Logo" class="w-[68px] h-auto object-contain"></a><nav class="hidden md:flex items-center gap-6"><a href="#product" class="text-[#17324D] hover:text-[#1589CF] text-[16px] font-bold transition-colors">Product</a><a href="#session-fit" class="text-[#17324D] hover:text-[#1589CF] text-[16px] font-bold transition-colors">For Providers</a><a href="#research" class="text-[#17324D] hover:text-[#1589CF] text-[16px] font-bold transition-colors">Evidence &amp; Safety</a><a href="https://gemgem.me/en/about" target="_blank" rel="noopener noreferrer" class="text-[#17324D] hover:text-[#1589CF] text-[16px] font-bold transition-colors">About</a><a href="#contact" class="text-[#17324D] hover:text-[#1589CF] text-[16px] font-bold transition-colors">Contact</a></nav></div><div class="flex items-center gap-3 flex-shrink-0"><a href="https://calendly.com/jeklinkim-gemgem/15-minute-aacpdm-intro-call" target="_blank" rel="noopener noreferrer" class="hidden sm:inline-flex items-center justify-center min-h-[48px] px-5 py-3 rounded-xl bg-[#1589CF] hover:bg-[#0A4B74] text-white text-[16px] font-bold transition-colors shadow-sm whitespace-nowrap text-center">Book a 15-minute conversation</a><button type="button" id="mobile-nav-toggle" aria-label="Open navigation" aria-expanded="false" onclick="var m=document.getElementById('mobile-nav-menu'); if(m){ var isHidden=m.classList.contains('hidden'); if(isHidden){ m.classList.remove('hidden'); this.setAttribute('aria-expanded','true'); } else { m.classList.add('hidden'); this.setAttribute('aria-expanded','false'); } }" class="md:hidden inline-flex items-center justify-center w-11 h-11 rounded-xl border border-[#CFE2EE] bg-white text-[#17324D] hover:text-[#1589CF] hover:bg-[#F2F8FC] transition-colors"><span class="material-symbols-outlined text-[24px]">menu</span></button></div></div><div id="mobile-nav-menu" class="hidden md:hidden border-t border-[#CFE2EE] mt-3 pt-3 pb-2 space-y-2"><nav class="flex flex-col gap-1"><a href="#product" onclick="document.getElementById('mobile-nav-menu').classList.add('hidden'); document.getElementById('mobile-nav-toggle').setAttribute('aria-expanded','false');" class="px-3 py-2 rounded-lg text-[#17324D] hover:text-[#1589CF] hover:bg-[#F2F8FC] text-[16px] font-bold transition-colors">Product</a><a href="#session-fit" onclick="document.getElementById('mobile-nav-menu').classList.add('hidden'); document.getElementById('mobile-nav-toggle').setAttribute('aria-expanded','false');" class="px-3 py-2 rounded-lg text-[#17324D] hover:text-[#1589CF] hover:bg-[#F2F8FC] text-[16px] font-bold transition-colors">For Providers</a><a href="#research" onclick="document.getElementById('mobile-nav-menu').classList.add('hidden'); document.getElementById('mobile-nav-toggle').setAttribute('aria-expanded','false');" class="px-3 py-2 rounded-lg text-[#17324D] hover:text-[#1589CF] hover:bg-[#F2F8FC] text-[16px] font-bold transition-colors">Evidence &amp; Safety</a><a href="https://gemgem.me/en/about" target="_blank" rel="noopener noreferrer" class="px-3 py-2 rounded-lg text-[#17324D] hover:text-[#1589CF] hover:bg-[#F2F8FC] text-[16px] font-bold transition-colors">About</a><a href="#contact" onclick="document.getElementById('mobile-nav-menu').classList.add('hidden'); document.getElementById('mobile-nav-toggle').setAttribute('aria-expanded','false');" class="px-3 py-2 rounded-lg text-[#17324D] hover:text-[#1589CF] hover:bg-[#F2F8FC] text-[16px] font-bold transition-colors">Contact</a></nav><div class="pt-2 sm:hidden"><a href="https://calendly.com/jeklinkim-gemgem/15-minute-aacpdm-intro-call" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center min-h-[48px] w-full px-5 py-3 rounded-xl bg-[#1589CF] hover:bg-[#0A4B74] text-white text-[16px] font-bold transition-colors shadow-sm text-center">Book a 15-minute conversation</a></div></div></header>
+<main><div class="border-b border-[#CFE2EE] bg-[#F2F8FC]/60 py-3 px-4 sm:px-8"><div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-3"><div class="flex items-center flex-wrap gap-2 sm:gap-3"><span class="text-[13px] sm:text-[14px] font-bold uppercase tracking-wider text-[#40566B] mr-2">FOR YOUR TEAM:</span><span class="bg-white text-[#1589CF] border border-[#A6D0E9] shadow-sm font-bold px-4 py-1.5 rounded-lg text-[14px] sm:text-[15px]">CP Therapy Teams</span><a href="/autism/" target="_top" class="text-[#40566B] hover:text-[#17324D] hover:bg-white/80 border border-transparent font-medium px-4 py-1.5 rounded-lg text-[14px] sm:text-[15px] transition-colors">Autism Programs</a></div></div></div><!-- 2. HERO SECTION -->
+<section class="py-14 md:py-24 bg-white border-b border-[#CFE2EE]" id="product">
+  <div class="max-w-[1120px] mx-auto px-4 md:px-8">
+    <div class="max-w-3xl mb-12">
+      <div class="inline-flex items-center gap-2 mb-4">
+        <span class="w-2 h-2 rounded-full bg-[#1589CF]"></span>
+        <span class="text-[14px] font-bold uppercase tracking-wider text-[#0A4B74]">FOR CP THERAPY TEAMS</span>
       </div>
-      <noscript><p>Please <a href="mailto:contact@gemgem.me?subject=GemGem400%20demo%20request">email us to request a demo</a>, or <a href="https://calendly.com/jeklinkim-gemgem/15-minute-aacpdm-intro-call">choose a time</a>.</p></noscript>
-    </section>
-  </section>
-</main>
-<footer class="site-footer wrap"><span>© <span id="year">2026</span> GemGem Therapeutics</span><nav aria-label="Footer"><a href="mailto:contact@gemgem.me">contact@gemgem.me</a><a href="privacy.html">Privacy</a></nav></footer>
-</body>
-</html>
+      <h1 class="text-[40px] sm:text-[48px] md:text-[56px] font-extrabold tracking-tight text-[#17324D] mb-5 leading-[1.08]">
+        Make movement feel like play.
+      </h1>
+      <p class="text-[20px] sm:text-[21px] text-[#40566B] leading-[1.6]">Hand-movement games for clinician-guided practice. You choose the movement, hand, level, and when to move on.</p>
+      <div class="flex flex-wrap items-center gap-3">
+        <a href="#real-session" class="inline-flex items-center justify-center min-h-[48px] px-6 py-3.5 rounded-xl bg-[#1589CF] hover:bg-[#0A4B74] text-white text-[16px] font-bold transition-colors shadow-sm">
+          <span class="material-symbols-outlined mr-2 text-[20px]">play_circle</span>
+          Watch a real session
+        </a>
+        <a href="#research" class="inline-flex items-center justify-center min-h-[48px] px-6 py-3.5 rounded-xl border border-[#A6D0E9] bg-white hover:bg-[#F2F8FC] text-[#0A4B74] text-[16px] font-bold transition-colors">
+          Read the study
+          <span class="material-symbols-outlined ml-1.5 text-[18px]">arrow_downward</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Video Card -->
+    <div id="real-session" class="bg-white border border-[#CFE2EE] rounded-2xl p-5 sm:p-6 shadow-sm">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-4 mb-4 border-b border-[#CFE2EE]">
+        <div class="flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-[#FD6E89]"></span>
+          <span class="text-[14px] font-bold text-[#1589CF] tracking-wide uppercase">REAL SESSION VIDEO</span>
+        </div>
+        <span class="text-[14px] text-[#40566B] bg-[#F2F8FC] px-3 py-1.5 rounded-full border border-[#CFE2EE]">Product demonstration, not a clinical outcome claim.</span>
+      </div>
+      <a href="https://www.youtube.com/watch?v=GvC23uPJH44" target="_blank" rel="noopener noreferrer" class="group relative block w-full aspect-video rounded-xl overflow-hidden bg-[#17324D] border border-[#CFE2EE]">
+        <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://img.youtube.com/vi/GvC23uPJH44/maxresdefault.jpg');">
+          <div class="absolute inset-0 bg-[#17324D]/60"></div>
+        </div>
+        <div class="relative h-full flex flex-col items-center justify-center p-6 text-center select-none z-10">
+          <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-[#1589CF] group-hover:bg-[#0A4B74] flex items-center justify-center text-white shadow-md transition-all duration-200 group-hover:scale-105">
+            <svg class="w-7 h-7 sm:w-8 sm:h-8 translate-x-0.5 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+          </div>
+          <span class="mt-4 text-white text-[16px] font-bold tracking-wide transition-colors">Watch session recording (YouTube)</span>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- 3. MOVEMENTS SECTION -->
+<section id="session-fit" class="py-16 md:py-20 bg-[#F2F8FC] border-b border-[#CFE2EE]"><div class="max-w-7xl mx-auto"><div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8"><div><span class="text-[14px] font-bold tracking-wider text-[#1589CF] uppercase block mb-1">CLINICAL WORKFLOW</span><h2 class="text-[32px] sm:text-[38px] font-extrabold text-[#17324D] tracking-tight">How it fits a session</h2></div><span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-[#EAF5FB] border border-[#CFE2EE] text-[#0A4B74] text-[14px] font-bold self-start sm:self-auto"><span class="w-2 h-2 rounded-full bg-[#1589CF]"></span>Therapist sets the pace</span></div><div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6"><div class="bg-white p-6 rounded-2xl border border-[#CFE2EE] shadow-sm"><div class="w-9 h-9 rounded-full bg-[#1589CF] text-white font-extrabold text-[16px] flex items-center justify-center mb-3">1</div><h3 class="text-[20px] font-bold text-[#17324D] mb-1">Choose</h3><p class="text-[17px] text-[#40566B]">Match today’s goal.</p></div><div class="bg-white p-6 rounded-2xl border border-[#CFE2EE] shadow-sm"><div class="w-9 h-9 rounded-full bg-[#1589CF] text-white font-extrabold text-[16px] flex items-center justify-center mb-3">2</div><h3 class="text-[20px] font-bold text-[#17324D] mb-1">Model</h3><p class="text-[17px] text-[#40566B]">Show the movement.</p></div><div class="bg-white p-6 rounded-2xl border border-[#CFE2EE] shadow-sm"><div class="w-9 h-9 rounded-full bg-[#1589CF] text-white font-extrabold text-[16px] flex items-center justify-center mb-3">3</div><h3 class="text-[20px] font-bold text-[#17324D] mb-1">Play</h3><p class="text-[17px] text-[#40566B]">Guide the child.</p></div><div class="bg-white p-6 rounded-2xl border border-[#CFE2EE] shadow-sm"><div class="w-9 h-9 rounded-full bg-[#1589CF] text-white font-extrabold text-[16px] flex items-center justify-center mb-3">4</div><h3 class="text-[20px] font-bold text-[#17324D] mb-1">Move on</h3><p class="text-[17px] text-[#40566B]">Pause or switch.</p></div></div></div></section><section class="py-16 md:py-24 bg-[#F2F8FC] border-b border-[#CFE2EE]">
+  <div class="max-w-7xl mx-auto"><h2 class="text-[32px] sm:text-[38px] font-extrabold text-[#17324D] tracking-tight mb-8">8 movements. Your settings.</h2><div class="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 my-8">
+  <div class="bg-white border border-[#CFE2EE] rounded-2xl overflow-hidden shadow-sm flex flex-col">
+    <div class="w-full overflow-hidden bg-[#F2F8FC]" style="aspect-ratio: 1000 / 850;">
+      <img src="./img/hand-movements/open-hand-wrist-lift.gif" alt="Open hand + lift the wrist" class="w-full h-full object-cover">
+    </div>
+    <div class="py-3 px-2 text-center text-[16px] font-bold text-[#17324D]">
+      Open hand + lift the wrist
+    </div>
+  </div>
+  <div class="bg-white border border-[#CFE2EE] rounded-2xl overflow-hidden shadow-sm flex flex-col">
+    <div class="w-full overflow-hidden bg-[#F2F8FC]" style="aspect-ratio: 1000 / 850;">
+      <img src="./img/hand-movements/close-hand.gif" alt="Close the hand" class="w-full h-full object-cover">
+    </div>
+    <div class="py-3 px-2 text-center text-[16px] font-bold text-[#17324D]">
+      Close the hand
+    </div>
+  </div>
+  <div class="bg-white border border-[#CFE2EE] rounded-2xl overflow-hidden shadow-sm flex flex-col">
+    <div class="w-full overflow-hidden bg-[#F2F8FC]" style="aspect-ratio: 1000 / 850;">
+      <img src="./img/hand-movements/thumb-extension.gif" alt="Thumb extension" class="w-full h-full object-cover">
+    </div>
+    <div class="py-3 px-2 text-center text-[16px] font-bold text-[#17324D]">
+      Thumb extension
+    </div>
+  </div>
+  <div class="bg-white border border-[#CFE2EE] rounded-2xl overflow-hidden shadow-sm flex flex-col">
+    <div class="w-full overflow-hidden bg-[#F2F8FC]" style="aspect-ratio: 1000 / 850;">
+      <img src="./img/hand-movements/thumb-index-pinch.gif" alt="Thumb–index pinch" class="w-full h-full object-cover">
+    </div>
+    <div class="py-3 px-2 text-center text-[16px] font-bold text-[#17324D]">
+      Thumb–index pinch
+    </div>
+  </div>
+  <div class="bg-white border border-[#CFE2EE] rounded-2xl overflow-hidden shadow-sm flex flex-col">
+    <div class="w-full overflow-hidden bg-[#F2F8FC]" style="aspect-ratio: 1000 / 850;">
+      <img src="./img/hand-movements/open-hand.gif" alt="Open the hand" class="w-full h-full object-cover">
+    </div>
+    <div class="py-3 px-2 text-center text-[16px] font-bold text-[#17324D]">
+      Open the hand
+    </div>
+  </div>
+  <div class="bg-white border border-[#CFE2EE] rounded-2xl overflow-hidden shadow-sm flex flex-col">
+    <div class="w-full overflow-hidden bg-[#F2F8FC]" style="aspect-ratio: 1000 / 850;">
+      <img src="./img/hand-movements/forearm-supination.gif" alt="Forearm supination" class="w-full h-full object-cover">
+    </div>
+    <div class="py-3 px-2 text-center text-[16px] font-bold text-[#17324D]">
+      Forearm supination
+    </div>
+  </div>
+  <div class="bg-white border border-[#CFE2EE] rounded-2xl overflow-hidden shadow-sm flex flex-col">
+    <div class="w-full overflow-hidden bg-[#F2F8FC]" style="aspect-ratio: 1000 / 850;">
+      <img src="./img/hand-movements/forearm-pronation.gif" alt="Forearm pronation" class="w-full h-full object-cover">
+    </div>
+    <div class="py-3 px-2 text-center text-[16px] font-bold text-[#17324D]">
+      Forearm pronation
+    </div>
+  </div>
+  <div class="bg-white border border-[#CFE2EE] rounded-2xl overflow-hidden shadow-sm flex flex-col">
+    <div class="w-full overflow-hidden bg-[#F2F8FC]" style="aspect-ratio: 1000 / 850;">
+      <img src="./img/hand-movements/tripod-pinch.gif" alt="Tripod pinch" class="w-full h-full object-cover">
+    </div>
+    <div class="py-3 px-2 text-center text-[16px] font-bold text-[#17324D]">
+      Tripod pinch
+    </div>
+  </div>
+</div><div class="bg-[#EAF5FB] border border-[#CFE2EE] rounded-2xl p-5 sm:p-6 mb-4 flex flex-col md:flex-row items-start md:items-center justify-between gap-4"><div class="flex flex-wrap items-center gap-x-6 gap-y-2 text-[16px] sm:text-[17px] text-[#17324D] font-medium"><div class="flex items-center gap-2"><span class="font-bold text-[#0A4B74]">Movement:</span> 8 options</div><div class="flex items-center gap-2"><span class="font-bold text-[#0A4B74]">Hand:</span> Left · Right · Both</div><div class="flex items-center gap-2"><span class="font-bold text-[#0A4B74]">Level:</span> Easy · Good · Great · Perfect</div></div></div><p class="text-[15px] sm:text-[16px] text-[#40566B] font-medium text-center">You set the pace and when to stop. Gameplay response—not clinical assessment.</p></div>
+</section>
+
+<!-- 4. BEFORE A TEAM TRIES IT -->
+<section class="py-16 md:py-24 bg-white border-b border-[#CFE2EE]">
+  <div class="max-w-7xl mx-auto"><h2 class="text-[32px] sm:text-[38px] font-extrabold text-[#17324D] tracking-tight mb-8">Before a team tries it.</h2><div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6"><div class="bg-white p-6 rounded-2xl border border-[#CFE2EE] shadow-sm"><span class="w-8 h-8 rounded-lg bg-[#EAF5FB] text-[#1589CF] font-extrabold text-[15px] flex items-center justify-center mb-3">01</span><h3 class="text-[20px] font-bold text-[#17324D] mb-1.5">Device</h3><p class="text-[17px] text-[#40566B]">Model · OS · MDM</p></div><div class="bg-white p-6 rounded-2xl border border-[#CFE2EE] shadow-sm"><span class="w-8 h-8 rounded-lg bg-[#EAF5FB] text-[#1589CF] font-extrabold text-[15px] flex items-center justify-center mb-3">02</span><h3 class="text-[20px] font-bold text-[#17324D] mb-1.5">Room</h3><p class="text-[17px] text-[#40566B]">Camera · distance · nearby people</p></div><div class="bg-white p-6 rounded-2xl border border-[#CFE2EE] shadow-sm"><span class="w-8 h-8 rounded-lg bg-[#EAF5FB] text-[#1589CF] font-extrabold text-[15px] flex items-center justify-center mb-3">03</span><h3 class="text-[20px] font-bold text-[#17324D] mb-1.5">Plan</h3><p class="text-[17px] text-[#40566B]">User · purpose · feedback · end point</p></div></div><details class="group bg-white rounded-2xl border border-[#CFE2EE] p-5 shadow-sm transition-all"><summary class="flex items-center justify-between cursor-pointer list-none text-[16px] font-bold text-[#0A4B74] select-none"><span class="">Setup and evaluation details</span><span class="material-symbols-outlined transition-transform duration-200 group-open:rotate-180 text-[#1589CF]">expand_more</span></summary><div class="pt-4 border-t border-[#CFE2EE] mt-4 space-y-4 text-[16px] text-[#40566B]"><p class=""><strong class="text-[#17324D]">Bring the intended device:</strong> Share the model, OS version, camera setup, and any mobile-device-management restrictions.</p><p class=""><strong class="text-[#17324D]">Review the start-to-play flow:</strong> See installation, account setup, movement selection, camera position, and the first activity.</p><p class=""><strong class="text-[#17324D]">Agree on what the evaluation will cover:</strong> Define who uses it, where, for what purpose, how feedback is collected, and how the evaluation ends.</p></div></details></div>
+</section>
+
+<!-- 5. PUBLISHED RESEARCH -->
+<section id="research" class="py-16 sm:py-20 px-5 sm:px-6 lg:px-10 bg-[#EAF5FB] border-y border-[#CFE2EE]"><div class="max-w-7xl mx-auto"><div class="bg-white rounded-3xl border border-[#CFE2EE] p-7 sm:p-10 shadow-sm"><div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6 mb-6"><div><span class="text-[14px] font-bold tracking-wider text-[#1589CF] uppercase block mb-1">PUBLISHED CP STUDY</span><h2 class="text-[26px] sm:text-[34px] font-extrabold text-[#17324D] tracking-tight">45 children · 8 weeks · 3 × 15 min/week</h2></div><a href="https://pubmed.ncbi.nlm.nih.gov" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 min-h-[48px] px-6 py-3 rounded-xl bg-[#1589CF] hover:bg-[#0A4B74] text-white text-[16px] font-bold transition-colors whitespace-nowrap self-start lg:self-auto">Open the paper on PubMed <span class="material-symbols-outlined text-[18px]">open_in_new</span></a></div><p class="text-[17px] sm:text-[18px] text-[#40566B] font-medium mb-6">Promising study results; not proof for every child, setting, device, or outcome.</p><details class="group bg-[#F2F8FC] rounded-2xl border border-[#CFE2EE] p-5 transition-all"><summary class="flex items-center justify-between cursor-pointer list-none text-[16px] font-bold text-[#0A4B74] select-none"><span class="">Study details and limits</span><span class="material-symbols-outlined transition-transform duration-200 group-open:rotate-180 text-[#1589CF]">expand_more</span></summary><div class="pt-4 border-t border-[#CFE2EE] mt-4 space-y-4 text-[16px] text-[#40566B]"><div class="text-[14px] font-mono text-[#40566B] bg-white px-3 py-1.5 rounded-lg border border-[#CFE2EE] inline-block">DOI: 10.1080/09638288.2026.2735445</div><p class=""><strong class="text-[#17324D]">Population:</strong> 45 children with cerebral palsy, aged 18 months to 7 years 5 months.</p><p class=""><strong class="text-[#17324D]">Program:</strong> Randomized controlled trial; 8 weeks; three 15-minute sessions per week.</p><p class=""><strong class="text-[#17324D]">Reported result:</strong> Significant time-by-group effects for Box and Block Test and palmar pinch strength in both hands, and for Functional Dexterity Test and tip pinch strength in the non-dominant hand.</p><p class=""><strong class="text-[#17324D]">What this study does not tell us:</strong> This study does not establish results for every diagnosis, age, movement profile, device setup, institution, or a one-month evaluation. Digital practice complements—not replaces—clinician-led care.</p></div></details></div></div></section>
+
+<!-- 6. PRACTICAL FAQ -->
+<section id="validation" class="py-16 sm:py-20 px-5 sm:px-6 lg:px-10 bg-white"><div class="max-w-7xl mx-auto"><h2 class="text-[32px] sm:text-[38px] font-extrabold text-[#17324D] tracking-tight mb-8">What we know—and what we still need to test.</h2><div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 mb-6"><div class="bg-[#F2F8FC] p-6 sm:p-8 rounded-2xl border border-[#CFE2EE]"><h3 class="text-[20px] font-bold text-[#17324D] mb-4">Known now</h3><ul class="space-y-3 text-[17px] text-[#40566B]"><li class="flex items-center gap-3"><span class="w-2 h-2 rounded-full bg-[#1589CF] flex-shrink-0"></span>8 movements · hand · recognition level</li><li class="flex items-center gap-3"><span class="w-2 h-2 rounded-full bg-[#1589CF] flex-shrink-0"></span>iOS / Android · front camera</li><li class="flex items-center gap-3"><span class="w-2 h-2 rounded-full bg-[#1589CF] flex-shrink-0"></span>Published CP study</li></ul></div><div class="bg-white p-6 sm:p-8 rounded-2xl border border-[#CFE2EE] shadow-sm"><h3 class="text-[20px] font-bold text-[#17324D] mb-4">Still checking with each team</h3><ul class="space-y-3 text-[17px] text-[#40566B]"><li class="flex items-center gap-3"><span class="w-2 h-2 rounded-full bg-[#B6DF3C] border border-[#8FA830] flex-shrink-0"></span>Recognition in the intended setup</li><li class="flex items-center gap-3"><span class="w-2 h-2 rounded-full bg-[#B6DF3C] border border-[#8FA830] flex-shrink-0"></span>Camera data · export · IT fit</li><li class="flex items-center gap-3"><span class="w-2 h-2 rounded-full bg-[#B6DF3C] border border-[#8FA830] flex-shrink-0"></span>Sustained use · functional fit</li></ul></div></div><p class="text-[15px] sm:text-[16px] text-[#40566B] font-medium text-center">Gameplay response—not a clinical score.</p></div></section><section class="py-16 sm:py-20 px-5 sm:px-6 lg:px-10 bg-[#F2F8FC] border-t border-[#CFE2EE]"><div class="max-w-4xl mx-auto"><h2 class="text-[30px] sm:text-[36px] font-extrabold text-[#17324D] tracking-tight mb-8 text-center sm:text-left">Questions provider teams ask before trying GemGem400.</h2><div class="space-y-4"><details class="group bg-white rounded-2xl border border-[#CFE2EE] p-5 sm:p-6 shadow-sm"><summary class="flex items-center justify-between cursor-pointer list-none text-[18px] font-bold text-[#17324D] select-none gap-4"><span class="">Can we use an iPad or another institution-owned device?</span><span class="material-symbols-outlined transition-transform duration-200 group-open:rotate-180 text-[#1589CF] flex-shrink-0">expand_more</span></summary><div class="pt-4 border-t border-[#CFE2EE] mt-4 text-[17px] text-[#40566B] leading-[1.6]"><p class="">The current app is built for iOS and Android devices with a front-facing camera. Bring the exact device model and OS version so compatibility and IT approval steps can be confirmed before an evaluation.</p></div></details><details class="group bg-white rounded-2xl border border-[#CFE2EE] p-5 sm:p-6 shadow-sm"><summary class="flex items-center justify-between cursor-pointer list-none text-[18px] font-bold text-[#17324D] select-none gap-4"><span class="">What about left-hand, right-hand, or bilateral use?</span><span class="material-symbols-outlined transition-transform duration-200 group-open:rotate-180 text-[#1589CF] flex-shrink-0">expand_more</span></summary><div class="pt-4 border-t border-[#CFE2EE] mt-4 text-[17px] text-[#40566B] leading-[1.6]"><p class="">You can set GemGem400 to track the left hand, the right hand, or both hands depending on the child and session goal.</p></div></details><details class="group bg-white rounded-2xl border border-[#CFE2EE] p-5 sm:p-6 shadow-sm"><summary class="flex items-center justify-between cursor-pointer list-none text-[18px] font-bold text-[#17324D] select-none gap-4"><span class="">Will it recognize every hand shape or range of motion?</span><span class="material-symbols-outlined transition-transform duration-200 group-open:rotate-180 text-[#1589CF] flex-shrink-0">expand_more</span></summary><div class="pt-4 border-t border-[#CFE2EE] mt-4 text-[17px] text-[#40566B] leading-[1.6]"><p class="">Recognition varies by child, involuntary movement, and camera position. You can choose from four recognition grades (Easy, Good, Great, Perfect) to test fit.</p></div></details><details class="group bg-white rounded-2xl border border-[#CFE2EE] p-5 sm:p-6 shadow-sm"><summary class="flex items-center justify-between cursor-pointer list-none text-[18px] font-bold text-[#17324D] select-none gap-4"><span class="">What video or movement data is stored or transmitted?</span><span class="material-symbols-outlined transition-transform duration-200 group-open:rotate-180 text-[#1589CF] flex-shrink-0">expand_more</span></summary><div class="pt-4 border-t border-[#CFE2EE] mt-4 text-[17px] text-[#40566B] leading-[1.6]"><p class="">The front-facing camera detects hand landmarks on the local device during gameplay. We review exact data flow, storage, and privacy documentation with each team before any evaluation.</p></div></details><details class="group bg-white rounded-2xl border border-[#CFE2EE] p-5 sm:p-6 shadow-sm"><summary class="flex items-center justify-between cursor-pointer list-none text-[18px] font-bold text-[#17324D] select-none gap-4"><span class="">Can we export data or connect it to a research system?</span><span class="material-symbols-outlined transition-transform duration-200 group-open:rotate-180 text-[#1589CF] flex-shrink-0">expand_more</span></summary><div class="pt-4 border-t border-[#CFE2EE] mt-4 text-[17px] text-[#40566B] leading-[1.6]"><p class="">Standard clinic use does not require data export. Research or institutional integrations can be discussed during an intro call.</p></div></details></div></div></section>
+
+<!-- 7. FINAL ACTION SECTION -->
+<section id="contact" class="py-16 md:py-24 bg-white"><div class="max-w-4xl mx-auto px-4 md:px-8"><div class="bg-[#EAF5FB] border border-[#CFE2EE] rounded-3xl py-12 px-6 sm:px-12 text-center shadow-sm"><h2 class="text-[28px] sm:text-[38px] font-extrabold text-[#17324D] mb-4 leading-[1.15]">Bring one typical 1:1 session.</h2><p class="text-[19px] sm:text-[20px] text-[#40566B] mb-8 max-w-xl mx-auto leading-[1.6]">In 15 minutes, we’ll walk through your device, setting, and open questions.</p><div class="flex flex-wrap items-center justify-center gap-4"><a href="https://calendly.com/jeklinkim-gemgem/15-minute-aacpdm-intro-call" target="_blank" rel="noopener noreferrer" class="min-h-[48px] bg-[#1589CF] hover:bg-[#0A4B74] text-white font-bold text-[16px] px-8 py-3.5 rounded-xl transition-colors shadow-sm inline-flex items-center justify-center">Book a 15-minute conversation</a><a href="mailto:jeklinkim@gemgem.me?subject=GemGem400%20provider%20inquiry" class="text-[#0A4B74] hover:text-[#1589CF] text-[16px] font-bold underline transition-colors inline-flex items-center min-h-[48px] px-4">Email jeklinkim@gemgem.me</a></div><span class="text-[15px] text-[#40566B] mt-6 block">A conversation is not a promise of a free trial, device support, or institutional approval.</span></div></div></section></main>
+<!-- 8. FOOTER -->
+<footer class="border-t border-[#CFE2EE] bg-white py-8"><div class="max-w-7xl mx-auto px-4 md:px-8 flex flex-col sm:flex-row justify-between items-center gap-4"><div class="flex items-center gap-3"><img src="./img/gemgem400-logo.png" alt="GemGem400 Logo" class="w-[60px] h-auto object-contain"><span class="text-[15px] text-[#40566B] font-medium">GemGem Therapeutics</span></div><div class="flex flex-wrap items-center justify-center gap-5 text-[15px] text-[#40566B]"><a href="https://calendly.com/jeklinkim-gemgem/15-minute-aacpdm-intro-call" target="_blank" rel="noopener noreferrer" class="hover:text-[#1589CF] transition-colors">Calendly Scheduling</a><a href="mailto:jeklinkim@gemgem.me?subject=GemGem400%20provider%20inquiry" class="hover:text-[#1589CF] transition-colors">Direct Email</a><a href="https://pubmed.ncbi.nlm.nih.gov/42776790/" target="_blank" rel="noopener noreferrer" class="hover:text-[#1589CF] transition-colors">PubMed Entry</a></div><div class="text-[15px] text-[#40566B]">© 2026 GemGem Therapeutics.</div></div></footer>
+
+
+
+
+
+
+
+
+
+
+</body></html>
