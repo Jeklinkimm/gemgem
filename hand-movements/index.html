@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Veja os oito movimentos da mão do GemGem400 e encontre o mesmo nome na planilha de configuração.">
+  <title>Movimentos da mão · GemGem400</title>
+  <style>
+    :root{color-scheme:light;--ink:#17324d;--muted:#536b7b;--blue:#086baa;--line:#dbe7ee;--paper:#f4f8fa}
+    *{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:"Avenir Next",Avenir,"Segoe UI",sans-serif}
+    main{max-width:1180px;margin:auto;padding:30px 28px 42px}a{color:var(--blue)}button,a{-webkit-tap-highlight-color:transparent}
+    .brand{font-weight:800;font-size:19px;letter-spacing:-.5px;text-decoration:none;color:var(--ink)}.brand span{color:var(--blue)}
+    header{margin:28px 0 24px}h1{font-size:clamp(28px,4vw,40px);line-height:1.15;letter-spacing:-1px;margin:0 0 7px;font-weight:750}
+    .english{color:var(--muted);font-size:15px;margin:0}.instructions{margin:20px 0 0;font-size:17px;line-height:1.5}
+    .toolbar{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:16px}.hint{font-size:13px;color:var(--muted);margin:0}
+    button.control{border:1px solid #a9c2d0;border-radius:7px;background:white;color:var(--ink);font-family:inherit;font-size:14px;font-weight:600;padding:11px 14px;min-height:44px;cursor:pointer;white-space:nowrap}
+    a:focus-visible,button:focus-visible{outline:3px solid #086baa;outline-offset:4px}
+    .grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:17px}.movement{background:white;border:1px solid var(--line);border-radius:12px;overflow:hidden}
+    .movement>a{display:block;height:100%;color:inherit;text-decoration:none}.visual{background:white;aspect-ratio:500/425;position:relative;overflow:hidden}
+    .visual img,.visual canvas{display:block;width:100%;height:100%;object-fit:contain}.visual canvas{position:absolute;inset:0}.visual canvas[hidden]{display:none}
+    .caption{padding:14px 15px 16px;border-top:1px solid var(--line);min-height:91px}.caption h2{margin:0 0 5px;font-size:17px;line-height:1.3;font-weight:700}.caption p{margin:0;color:var(--muted);font-size:13px;line-height:1.4}
+    .movement>a:hover .caption h2{text-decoration:underline;text-underline-offset:3px}.fallback{display:block;margin:0 15px 16px;font-size:14px}.fallback[hidden]{display:none}
+    footer{font-size:13px;color:var(--muted);margin-top:22px;line-height:1.5}
+    dialog{padding:0;border:0;border-radius:14px;max-width:min(650px,calc(100vw - 28px));max-height:calc(100dvh - 28px);width:650px;color:var(--ink);box-shadow:0 20px 100px #0004}
+    dialog::backdrop{background:#102b43b8}.dialog-head{padding:17px 20px;display:flex;justify-content:space-between;align-items:center;gap:20px;border-bottom:1px solid var(--line)}
+    .dialog-head h2{font-size:21px;line-height:1.3;margin:0 0 4px}.dialog-head p{margin:0;color:var(--muted);font-size:14px}.dialog-body{max-width:580px;margin:auto}.dialog-body .visual{max-height:65dvh;aspect-ratio:500/425}
+    .dialog-foot{padding:12px 20px 20px;font-size:14px}.dialog-foot a{text-underline-offset:3px}
+    @media(max-width:850px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}main{max-width:690px}.caption{min-height:89px}}
+    @media(max-width:420px){main{padding:22px 15px 30px}header{margin-top:24px}.grid{gap:12px}.caption{padding:12px 10px;min-height:108px}.caption h2{font-size:15px}.caption p{font-size:12px}.toolbar{align-items:flex-start;gap:12px}.hint{max-width:150px}.instructions{font-size:16px}.dialog-head{padding:15px}.dialog-head h2{font-size:18px}}
+    @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+  </style>
+</head>
+<body>
+<main>
+  <a class="brand" href="https://gemgem400.com/">GemGem<span>400</span></a>
+  <header>
+    <h1>Movimentos da mão</h1>
+    <p class="english" lang="en">Hand movement examples</p>
+    <p class="instructions">Veja a animação e escolha o mesmo nome na planilha.</p>
+  </header>
+  <div class="toolbar">
+    <p class="hint">Toque em uma imagem para ampliar.</p>
+    <button class="control" id="motion-toggle" type="button" aria-pressed="false">Pausar animações</button>
+  </div>
+  <div class="grid" id="movements">
+    <article class="movement" id="f3">
+      <a href="https://gemgem400.com/img/hand-movements/close-hand.gif" data-pt="Fechar a mão" data-en="Make a fist" aria-label="Fechar a mão. Make a fist. Ampliar animação.">
+        <div class="visual"><img src="https://gemgem400.com/img/hand-movements/close-hand.gif" alt="Fechar a mão" width="500" height="425"><canvas hidden aria-hidden="true"></canvas></div>
+        <div class="caption"><h2>Fechar a mão</h2><p lang="en">Make a fist</p></div>
+      </a>
+    </article>
+    <article class="movement" id="f4">
+      <a href="https://gemgem400.com/img/hand-movements/open-hand.gif" data-pt="Abrir a mão" data-en="Open hand" aria-label="Abrir a mão. Open hand. Ampliar animação.">
+        <div class="visual"><img src="https://gemgem400.com/img/hand-movements/open-hand.gif" alt="Abrir a mão" width="500" height="425"><canvas hidden aria-hidden="true"></canvas></div>
+        <div class="caption"><h2>Abrir a mão</h2><p lang="en">Open hand</p></div>
+      </a>
+    </article>
+    <article class="movement" id="c2">
+      <a href="https://gemgem400.com/img/hand-movements/open-hand-wrist-lift.gif" data-pt="Extensão do punho" data-en="Wrist extension" aria-label="Extensão do punho. Wrist extension. Ampliar animação.">
+        <div class="visual"><img src="https://gemgem400.com/img/hand-movements/open-hand-wrist-lift.gif" alt="Extensão do punho" width="500" height="425"><canvas hidden aria-hidden="true"></canvas></div>
+        <div class="caption"><h2>Extensão do punho</h2><p lang="en">Wrist extension</p></div>
+      </a>
+    </article>
+    <article class="movement" id="b2">
+      <a href="https://gemgem400.com/img/hand-movements/thumb-extension.gif" data-pt="Extensão do polegar" data-en="Thumb extension" aria-label="Extensão do polegar. Thumb extension. Ampliar animação.">
+        <div class="visual"><img src="https://gemgem400.com/img/hand-movements/thumb-extension.gif" alt="Extensão do polegar" width="500" height="425"><canvas hidden aria-hidden="true"></canvas></div>
+        <div class="caption"><h2>Extensão do polegar</h2><p lang="en">Thumb extension</p></div>
+      </a>
+    </article>
+    <article class="movement" id="h1">
+      <a href="https://gemgem400.com/img/hand-movements/forearm-pronation.gif" data-pt="Pronação" data-en="Pronation" aria-label="Pronação. Pronation. Ampliar animação.">
+        <div class="visual"><img src="https://gemgem400.com/img/hand-movements/forearm-pronation.gif" alt="Pronação" width="500" height="425" loading="lazy"><canvas hidden aria-hidden="true"></canvas></div>
+        <div class="caption"><h2>Pronação</h2><p lang="en">Pronation</p></div>
+      </a>
+    </article>
+    <article class="movement" id="h2">
+      <a href="https://gemgem400.com/img/hand-movements/forearm-supination.gif" data-pt="Supinação" data-en="Supination" aria-label="Supinação. Supination. Ampliar animação.">
+        <div class="visual"><img src="https://gemgem400.com/img/hand-movements/forearm-supination.gif" alt="Supinação" width="500" height="425" loading="lazy"><canvas hidden aria-hidden="true"></canvas></div>
+        <div class="caption"><h2>Supinação</h2><p lang="en">Supination</p></div>
+      </a>
+    </article>
+    <article class="movement" id="j1">
+      <a href="https://gemgem400.com/img/hand-movements/thumb-index-pinch.gif" data-pt="Pinça polegar-indicador" data-en="Thumb-index pinch" aria-label="Pinça polegar-indicador. Thumb-index pinch. Ampliar animação.">
+        <div class="visual"><img src="https://gemgem400.com/img/hand-movements/thumb-index-pinch.gif" alt="Pinça polegar-indicador" width="500" height="425" loading="lazy"><canvas hidden aria-hidden="true"></canvas></div>
+        <div class="caption"><h2>Pinça polegar-indicador</h2><p lang="en">Thumb-index pinch</p></div>
+      </a>
+    </article>
+    <article class="movement" id="j5">
+      <a href="https://gemgem400.com/img/hand-movements/tripod-pinch.gif" data-pt="Pinça de três dedos" data-en="Three-point pinch" aria-label="Pinça de três dedos. Three-point pinch. Ampliar animação.">
+        <div class="visual"><img src="https://gemgem400.com/img/hand-movements/tripod-pinch.gif" alt="Pinça de três dedos" width="500" height="425" loading="lazy"><canvas hidden aria-hidden="true"></canvas></div>
+        <div class="caption"><h2>Pinça de três dedos</h2><p lang="en">Three-point pinch</p></div>
+      </a>
+    </article>
+  </div>
+  <footer>Os nomes e a ordem são os mesmos da lista de movimentos na planilha.</footer>
+</main>
+<dialog id="zoom" aria-labelledby="zoom-title" aria-describedby="zoom-en">
+  <div class="dialog-head"><div><h2 id="zoom-title"></h2><p id="zoom-en" lang="en"></p></div><button class="control" id="close" type="button">Fechar</button></div>
+  <div class="dialog-body"><div class="visual"><img id="zoom-image" alt="" width="500" height="425"><canvas hidden aria-hidden="true"></canvas></div></div>
+  <div class="dialog-foot"><a id="original-link">Abrir o GIF original</a></div>
+</dialog>
+<script>
+  const toggle = document.querySelector('#motion-toggle');
+  const dialog = document.querySelector('#zoom');
+  const zoomImage = document.querySelector('#zoom-image');
+  let paused = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function freeze(image) {
+    const canvas = image.nextElementSibling;
+    if (!image.complete || !image.naturalWidth) return;
+    canvas.width = image.naturalWidth;
+    canvas.height = image.naturalHeight;
+    canvas.getContext('2d').drawImage(image,0,0);
+    canvas.hidden = !paused;
+  }
+  function syncMotion() {
+    document.querySelectorAll('.visual img').forEach(freeze);
+    toggle.textContent = paused ? 'Reproduzir animações' : 'Pausar animações';
+    toggle.setAttribute('aria-pressed',String(paused));
+  }
+  document.querySelectorAll('.visual img').forEach(image => {
+    image.addEventListener('load',() => freeze(image));
+    image.addEventListener('error',() => {
+      const anchor = image.closest('a');
+      if (!anchor || anchor.parentElement.querySelector('.fallback')) return;
+      const fallback = document.createElement('a');
+      fallback.className = 'fallback'; fallback.href = anchor.href;
+      fallback.textContent = 'Abrir GIF'; anchor.after(fallback);
+    });
+  });
+  toggle.addEventListener('click',() => {paused = !paused;syncMotion()});
+  document.querySelectorAll('.movement>a').forEach(anchor => anchor.addEventListener('click',event => {
+    if (!dialog.showModal) return;
+    event.preventDefault();
+    document.querySelector('#zoom-title').textContent = anchor.dataset.pt;
+    document.querySelector('#zoom-en').textContent = anchor.dataset.en;
+    zoomImage.alt = anchor.dataset.pt;
+    zoomImage.nextElementSibling.hidden = true;
+    zoomImage.src = anchor.href;
+    document.querySelector('#original-link').href = anchor.href;
+    dialog.showModal();freeze(zoomImage);
+  }));
+  document.querySelector('#close').addEventListener('click',() => dialog.close());
+  dialog.addEventListener('click',event => {if(event.target===dialog)dialog.close()});
+  syncMotion();
+</script>
+</body>
+</html>
