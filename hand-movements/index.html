@@ -5,28 +5,29 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="description" content="Veja os oito movimentos da mão do GemGem400 e encontre o mesmo nome na planilha de configuração.">
   <title>Movimentos da mão · GemGem400</title>
+  <link rel="stylesheet" href="https://gemgem400.com/fonts/pretendard.css">
   <style>
-    :root{color-scheme:light;--ink:#17324d;--muted:#536b7b;--blue:#086baa;--line:#dbe7ee;--paper:#f4f8fa}
-    *{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:"Avenir Next",Avenir,"Segoe UI",sans-serif}
-    main{max-width:1180px;margin:auto;padding:30px 28px 42px}a{color:var(--blue)}button,a{-webkit-tap-highlight-color:transparent}
-    .brand{font-weight:800;font-size:19px;letter-spacing:-.5px;text-decoration:none;color:var(--ink)}.brand span{color:var(--blue)}
-    header{margin:28px 0 24px}h1{font-size:clamp(28px,4vw,40px);line-height:1.15;letter-spacing:-1px;margin:0 0 7px;font-weight:750}
-    .english{color:var(--muted);font-size:15px;margin:0}.instructions{margin:20px 0 0;font-size:17px;line-height:1.5}
-    .toolbar{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:16px}.hint{font-size:13px;color:var(--muted);margin:0}
+    :root{color-scheme:light;--ink:#142c40;--muted:#41586a;--blue:#086baa;--line:#cbd9e2;--paper:#f5f8fa}
+    *{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:"Pretendard Variable",Pretendard,"Helvetica Neue",sans-serif;font-size:18px;line-height:1.5}
+    main{max-width:1240px;margin:auto;padding:24px 28px 36px}a{color:var(--blue)}button,a{-webkit-tap-highlight-color:transparent}
+    .brand{font-weight:650;font-size:20px;text-decoration:none;color:var(--ink)}.brand span{color:var(--blue)}
+    header{margin:20px 0}h1{font-size:clamp(28px,3vw,34px);line-height:1.25;letter-spacing:-.4px;margin:0 0 4px;font-weight:650}
+    .english{color:var(--muted);font-size:17px;margin:0}.instructions{margin:16px 0 0;font-size:19px;line-height:1.55}
+    .toolbar{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:18px}.hint{font-size:16px;color:var(--muted);margin:0}
     button.control{border:1px solid #a9c2d0;border-radius:7px;background:white;color:var(--ink);font-family:inherit;font-size:14px;font-weight:600;padding:11px 14px;min-height:44px;cursor:pointer;white-space:nowrap}
     a:focus-visible,button:focus-visible{outline:3px solid #086baa;outline-offset:4px}
-    .grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:17px}.movement{background:white;border:1px solid var(--line);border-radius:12px;overflow:hidden}
-    .movement>a{display:block;height:100%;color:inherit;text-decoration:none}.visual{background:white;aspect-ratio:500/425;position:relative;overflow:hidden}
+    .grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}.movement{background:white;border:1px solid var(--line);border-radius:10px;overflow:hidden}
+    .movement>a{display:flex;flex-direction:column;height:100%;color:inherit;text-decoration:none}.visual{background:white;aspect-ratio:500/425;position:relative;overflow:hidden}
     .visual img,.visual canvas{display:block;width:100%;height:100%;object-fit:contain}.visual canvas{position:absolute;inset:0}.visual canvas[hidden]{display:none}
-    .caption{padding:14px 15px 16px;border-top:1px solid var(--line);min-height:91px}.caption h2{margin:0 0 5px;font-size:17px;line-height:1.3;font-weight:700}.caption p{margin:0;color:var(--muted);font-size:13px;line-height:1.4}
+    .caption{order:-1;padding:18px 18px 16px;border-bottom:1px solid var(--line);min-height:116px}.caption h2{margin:0 0 8px;font-size:22px;line-height:1.3;font-weight:650;overflow-wrap:break-word}.caption p{margin:0;color:var(--muted);font-size:17px;line-height:1.4}
     .movement>a:hover .caption h2{text-decoration:underline;text-underline-offset:3px}.fallback{display:block;margin:0 15px 16px;font-size:14px}.fallback[hidden]{display:none}
     footer{font-size:13px;color:var(--muted);margin-top:22px;line-height:1.5}
     dialog{padding:0;border:0;border-radius:14px;max-width:min(650px,calc(100vw - 28px));max-height:calc(100dvh - 28px);width:650px;color:var(--ink);box-shadow:0 20px 100px #0004}
     dialog::backdrop{background:#102b43b8}.dialog-head{padding:17px 20px;display:flex;justify-content:space-between;align-items:center;gap:20px;border-bottom:1px solid var(--line)}
-    .dialog-head h2{font-size:21px;line-height:1.3;margin:0 0 4px}.dialog-head p{margin:0;color:var(--muted);font-size:14px}.dialog-body{max-width:580px;margin:auto}.dialog-body .visual{max-height:65dvh;aspect-ratio:500/425}
+    .dialog-head h2{font-size:25px;line-height:1.3;margin:0 0 6px;font-weight:650}.dialog-head p{margin:0;color:var(--muted);font-size:18px}.dialog-actions{display:flex;gap:8px;flex-wrap:wrap}.dialog-body{max-width:580px;margin:auto}.dialog-body .visual{max-height:65dvh;aspect-ratio:500/425}
     .dialog-foot{padding:12px 20px 20px;font-size:14px}.dialog-foot a{text-underline-offset:3px}
-    @media(max-width:850px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}main{max-width:690px}.caption{min-height:89px}}
-    @media(max-width:420px){main{padding:22px 15px 30px}header{margin-top:24px}.grid{gap:12px}.caption{padding:12px 10px;min-height:108px}.caption h2{font-size:15px}.caption p{font-size:12px}.toolbar{align-items:flex-start;gap:12px}.hint{max-width:150px}.instructions{font-size:16px}.dialog-head{padding:15px}.dialog-head h2{font-size:18px}}
+    @media(max-width:1000px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}main{max-width:760px}.caption{min-height:108px}}
+    @media(max-width:520px){main{padding:22px 16px 30px}.grid{gap:14px}.caption{padding:14px 12px;min-height:132px}.caption h2{font-size:20px}.caption p{font-size:16px}.toolbar{align-items:center;gap:12px}.hint{max-width:175px;font-size:15px}.instructions{font-size:18px}.dialog-head{padding:15px;align-items:flex-start;flex-wrap:wrap}.dialog-head h2{font-size:23px}.dialog-head p{font-size:17px}}
     @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
   </style>
 </head>
@@ -39,8 +40,8 @@
     <p class="instructions">Veja a animação e escolha o mesmo nome na planilha.</p>
   </header>
   <div class="toolbar">
-    <p class="hint">Toque em uma imagem para ampliar.</p>
-    <button class="control" id="motion-toggle" type="button" aria-pressed="false">Pausar animações</button>
+    <p class="hint">Toque em um movimento para ver a animação.</p>
+    <button class="control" id="motion-toggle" type="button" aria-pressed="false">Reproduzir todos</button>
   </div>
   <div class="grid" id="movements">
     <article class="movement" id="f3">
@@ -92,10 +93,9 @@
       </a>
     </article>
   </div>
-  <footer>Os nomes e a ordem são os mesmos da lista de movimentos na planilha.</footer>
 </main>
 <dialog id="zoom" aria-labelledby="zoom-title" aria-describedby="zoom-en">
-  <div class="dialog-head"><div><h2 id="zoom-title"></h2><p id="zoom-en" lang="en"></p></div><button class="control" id="close" type="button">Fechar</button></div>
+  <div class="dialog-head"><div><h2 id="zoom-title"></h2><p id="zoom-en" lang="en"></p></div><div class="dialog-actions"><button class="control" id="zoom-motion" type="button" aria-pressed="true">Pausar</button><button class="control" id="close" type="button">Fechar</button></div></div>
   <div class="dialog-body"><div class="visual"><img id="zoom-image" alt="" width="500" height="425"><canvas hidden aria-hidden="true"></canvas></div></div>
   <div class="dialog-foot"><a id="original-link">Abrir o GIF original</a></div>
 </dialog>
@@ -103,19 +103,22 @@
   const toggle = document.querySelector('#motion-toggle');
   const dialog = document.querySelector('#zoom');
   const zoomImage = document.querySelector('#zoom-image');
-  let paused = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const zoomToggle = document.querySelector('#zoom-motion');
+  let paused = true;
+  let zoomPaused = reducedMotion;
   function freeze(image) {
     const canvas = image.nextElementSibling;
     if (!image.complete || !image.naturalWidth) return;
     canvas.width = image.naturalWidth;
     canvas.height = image.naturalHeight;
     canvas.getContext('2d').drawImage(image,0,0);
-    canvas.hidden = !paused;
+    canvas.hidden = !(image === zoomImage ? zoomPaused : paused);
   }
   function syncMotion() {
     document.querySelectorAll('.visual img').forEach(freeze);
-    toggle.textContent = paused ? 'Reproduzir animações' : 'Pausar animações';
-    toggle.setAttribute('aria-pressed',String(paused));
+    toggle.textContent = paused ? 'Reproduzir todos' : 'Pausar todos';
+    toggle.setAttribute('aria-pressed',String(!paused));
   }
   document.querySelectorAll('.visual img').forEach(image => {
     image.addEventListener('load',() => freeze(image));
@@ -135,11 +138,20 @@
     document.querySelector('#zoom-en').textContent = anchor.dataset.en;
     zoomImage.alt = anchor.dataset.pt;
     zoomImage.nextElementSibling.hidden = true;
+    zoomPaused = reducedMotion;
+    zoomToggle.textContent = zoomPaused ? 'Reproduzir' : 'Pausar';
+    zoomToggle.setAttribute('aria-pressed',String(!zoomPaused));
     zoomImage.src = anchor.href;
     document.querySelector('#original-link').href = anchor.href;
     dialog.showModal();freeze(zoomImage);
   }));
   document.querySelector('#close').addEventListener('click',() => dialog.close());
+  zoomToggle.addEventListener('click',() => {
+    zoomPaused = !zoomPaused;
+    zoomToggle.textContent = zoomPaused ? 'Reproduzir' : 'Pausar';
+    zoomToggle.setAttribute('aria-pressed',String(!zoomPaused));
+    freeze(zoomImage);
+  });
   dialog.addEventListener('click',event => {if(event.target===dialog)dialog.close()});
   syncMotion();
 </script>
